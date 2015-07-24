@@ -6,7 +6,7 @@ SD Card Setup
 
   1. Install RaspianOS on a SDCard. See: https://www.raspberrypi.org/documentation/installation/installing-images/
 
-    You could also review the python program in `pysdscard/src/sdcard/creatdSDCard.py` for ways to create 
+    You could also review the python program in [pysdcard](https://github.com/bhamail/pinexus/tree/master/pysdcard) for ways to create 
     bootable SDCard images.
     
    
@@ -80,4 +80,32 @@ Nexus Setup
 
    The Nexus administrator credentials default to user: `admin`, password: `admin123`.
    
-  @TODO Add wrapper/deamon setup notes
+   *@TODO Add wrapper/deamon setup notes*
+  
+ Old Steps for JSW - for NX2
+ 
+ ---------------------------
+   
+   To compile ARM compatible JSW service binary for ARM:
+    
+   see:
+    http://honnix.com/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi/
+
+   and:
+    http://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html
+
+   Build notes: Worked with wrapper_3.5.25_src.
+   
+   - use jsw build32.sh script
+   
+   Edits to: nexus/nexus-3.0.0-SNAPSHOT/etc/nexus3-wrapper.conf 
+   
+   ------------------------------------------------------------
+   
+   Fix/avoid error: fatal error: jni.h: No such file or directory by setting java home: 
+   
+      $ export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
+   
+   
+
+   

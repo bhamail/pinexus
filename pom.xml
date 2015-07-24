@@ -9,7 +9,7 @@
 
   <name>PiNexus</name>
   <description>Tools to play with Nexus on a RaspberryPi.</description>
-  <url>http://maven.apache.org/</url>
+  <url>http://bhamail.github.io/pinexus/</url>
   <inceptionYear>2015</inceptionYear>
   <licenses>
     <license>
