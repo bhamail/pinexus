@@ -13,8 +13,8 @@ Here is some documentation about how this documentation is written. Feel free to
   3. You may also find some README.md files scattered around the source tree as well.
 
 
-Doc Publishing Notes
---------------------
+Doc Publishing
+--------------
 
 To deploy these docs to GH Pages, see: http://stephenc.github.io/wagon-gitsite/
 

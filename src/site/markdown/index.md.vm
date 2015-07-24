@@ -2,3 +2,5 @@ ${project.name}
 ===============
   
 ${project.description}
+
+${project.url}
