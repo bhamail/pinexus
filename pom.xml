@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.rollocos.pi.nexus</groupId>
+  <artifactId>pinexus-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>PiNexus</name>
+  <description>Tools to play with Nexus on a RaspberryPi.</description>
+  <url>http://maven.apache.org/</url>
+  <inceptionYear>2015</inceptionYear>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>bhamail</id>
+      <name>Dan Rollo</name>
+      <email>danrollo@gmail.com</email>
+      <timezone>-4</timezone>
+    </developer>
+  </developers>
+
+  <prerequisites>
+    <maven>3</maven>
+  </prerequisites>
+
+  <scm>
+    <url>https://github.com/bhamail/pinexus</url>
+    <connection>scm:git:git://github.com/bhamail/pinexus.git</connection>
+    <developerConnection>scm:git:git@github.com/bhamail/pinexus.git</developerConnection>
+  </scm>
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/bhamail/pinexus/issues</url>
+  </issueManagement>
+  <distributionManagement>
+    <site>
+      <id>github-project-site</id>
+      <url>gitsite:git@github.com/bhamail/pinexus.git</url>
+    </site>
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>tidy-maven-plugin</artifactId>
+          <version>1.0-beta-1</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.4</version>
+          <executions>
+            <execution>
+              <id>attach-descriptor</id>
+              <goals>
+                <goal>attach-descriptor</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.8</version>
+        </plugin>
+
+        <!-- transitive plugin dep versions - begin -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>2.6.1</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.3</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.8</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.5.5</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>2.10</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.6</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.7</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.18.1</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <!-- transitive plugin dep versions - end -->
+
+      </plugins>
+    </pluginManagement>
+    <!-- BEGIN: extensions supporting 'gitsite' wagon, to publish maven site to git hub pages.
+    See: http://khuxtable.github.com/wagon-gitsite/usage.html
+    -->
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.scm</groupId>
+        <artifactId>maven-scm-provider-gitexe</artifactId>
+        <version>1.3</version>
+      </extension>
+      <extension>
+        <groupId>org.apache.maven.scm</groupId>
+        <artifactId>maven-scm-manager-plexus</artifactId>
+        <version>1.3</version>
+      </extension>
+      <extension>
+        <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+        <artifactId>wagon-gitsite</artifactId>
+        <version>0.3.1</version>
+        <!--<version>0.4-SNAPSHOT</version>-->
+      </extension>
+    </extensions>
+  <!-- END: extensions supporting 'gitsite' wagon, to publish maven site to git hub pages. -->
+  </build>
+
+  <reporting>
+    <plugins>
+      
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+  </reporting>
+</project>
