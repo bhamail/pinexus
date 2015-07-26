@@ -29,6 +29,6 @@ A USB Keyboard and Mouse are optional, as most everything can be done via `ssh`.
 
   4. $11.00 (5 or more) - 32GB microSD card w/ SD adapter
   
-    http://www.newegg.com/Product/Product.aspx?Item=N82E16820231577&amp;cm_re=gskill_class10_sdcard_32gb-_-20-231-577-_-Product
+    http://www.newegg.com/Product/Product.aspx?Item=N82E16820231577&cm_re=gskill_class10_sdcard_32gb-_-20-231-577-_-Product
 
     ![Pi2](images/supplies/SDCard-20-231-577-Z01.jpg)
