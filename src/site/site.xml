@@ -15,7 +15,12 @@
 
       <item name="Introduction" href="index.html">
         <item name="Supplies" href="supplies.html"/>
-        <item name="Setup" href="setup.html"/>
+        <item name="Setup" href="setup.html">
+          <item name="SD Card Setup" href="setup.html#SD_Card_Setup"/>
+          <item name="OS Setup" href="setup.html#OS_Setup"/>
+          <item name="Nexus Setup" href="setup.html#Nexus_Setup"/>
+          <item name="Nexus Daemon" href="setup.html#Nexus_deamon_setup"/>
+        </item>
         <item name="Doc docs" href="docdocs.html"/>
       </item>
 
