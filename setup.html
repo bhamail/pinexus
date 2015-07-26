@@ -210,11 +210,78 @@ Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
 <div class="source">
 <pre>  http://&lt;the Pi IP address&gt;:8081
 </pre></div></div>
-<p>The default Nexus administrator credentials are user: <tt>admin</tt>, password: <tt>admin123</tt>.  Huzzah! Nexus is running on your Pi.</p>
-<hr />
-<p><i>@TODO Add wrapper/deamon setup notes</i></p>
+<p>The default Nexus administrator credentials are user: <tt>admin</tt>, password: <tt>admin123</tt>.  Huzzah! Nexus is running on your Pi. </p></div>
+<div class="section">
+<h2><a name="Nexus_deamon_setup"></a>Nexus deamon setup</h2>
+<p>To enable Nexus to launch automatically at system boot time, make the following changes:</p>
+
+<ol style="list-style-type: decimal">
+  
+<li>
+<p>Create a new init.d script in order to install Nexus as a system service:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ cd /etc/init.d/
+pi@raspberrypi /etc/init.d $ sudo vi nexus
+</pre></div></div>
+<p>Paste the following content into this new file, and save the file:</p>
+  
+<div class="source">
+<div class="source">
+<pre>#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          nexus
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start nexus daemon at boot time
+# Description:       Enable nexus as a system service provided by daemon.
+### END INIT INFO
+
+NEXUS_HOME=&quot;/home/pi/nexus/nexus-3.0.0-SNAPSHOT&quot;
+NEXUS_USER=&quot;pi&quot;
+
+exec sudo -u &quot;$NEXUS_USER&quot; -- &quot;$NEXUS_HOME/bin/nexus&quot; &quot;$@&quot;
+</pre></div></div>
+<p>Here&#x2019;s a file with the same content you could just copy into <tt>/etc/init.d/</tt>: <a href="scripts/nexus">nexus</a></p></li>
+  
+<li>
+<p>Add execute permission to the new init.d script:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi /etc/init.d $ sudo chmod +x nexus        
+</pre></div></div></li>
+  
+<li>
+<p>Setup init scripts using <tt>update-rc.d</tt>:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi /etc/init.d $ sudo update-rc.d nexus defaults
+</pre></div></div></li>
+  
+<li>
+<p>Test the function of the init scripts:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ service nexus start
+</pre></div></div>
+<p>or, just reboot the Pi and see if nexus is running after reboot:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ service nexus status
+...
+Running ...
+</pre></div></div></li>
+</ol>
 <hr />
 <p>Next step: <a href="docdocs.html">Doc docs</a></p>
+<hr />
 <p>Old Steps for JSW - for NX2 (no longer required)</p>
 <hr />
 <p>To compile ARM compatible JSW service binary for ARM:</p>
