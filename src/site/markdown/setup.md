@@ -80,17 +80,62 @@ Nexus Setup
       http://<the Pi IP address>:8081
 
    The default Nexus administrator credentials are user: `admin`, password: `admin123`. 
-   Huzzah! Nexus is running on your Pi.
+   Huzzah! Nexus is running on your Pi.  
    
-   ----------------
+Nexus deamon setup
+------------------
    
-   *@TODO Add wrapper/deamon setup notes*
+   To enable Nexus to launch automatically at system boot time, make the following changes:
    
+   1. Create a new init.d script in order to install Nexus as a system service: 
+   
+        pi@raspberrypi ~ $ cd /etc/init.d/
+        pi@raspberrypi /etc/init.d $ sudo vi nexus
+        
+      Paste the following content into this new file, and save the file:
+   
+        #!/bin/sh
+        ### BEGIN INIT INFO
+        # Provides:          nexus
+        # Required-Start:    $remote_fs $syslog
+        # Required-Stop:     $remote_fs $syslog
+        # Default-Start:     2 3 4 5
+        # Default-Stop:      0 1 6
+        # Short-Description: Start nexus daemon at boot time
+        # Description:       Enable nexus as a system service provided by daemon.
+        ### END INIT INFO
+      
+        NEXUS_HOME="/home/pi/nexus/nexus-3.0.0-SNAPSHOT"
+        NEXUS_USER="pi"
+        
+        exec sudo -u "$NEXUS_USER" -- "$NEXUS_HOME/bin/nexus" "$@"
+        
+      Here's a file with the same content you could just copy into `/etc/init.d/`: [nexus](scripts/nexus)
+        
+   3. Add execute permission to the new init.d script:
+
+        pi@raspberrypi /etc/init.d $ sudo chmod +x nexus        
+
+   4. Setup init scripts using `update-rc.d`:
+   
+        pi@raspberrypi /etc/init.d $ sudo update-rc.d nexus defaults
+        
+   5. Test the function of the init scripts:
+   
+        pi@raspberrypi ~ $ service nexus start
+        
+      or, just reboot the Pi and see if nexus is running after reboot:
+      
+        pi@raspberrypi ~ $ service nexus status
+        ...
+        Running ...
+        
    ----------------
    
 Next step: [Doc docs](docdocs.html)
    
-  
+ ----------------
+ 
  Old Steps for JSW - for NX2 (no longer required)
  
  ---------------------------
