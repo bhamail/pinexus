@@ -80,7 +80,7 @@ Nexus Setup
       http://<the Pi IP address>:8081
 
    The default Nexus administrator credentials are user: `admin`, password: `admin123`. 
-   Huzah! Nexus is running on your Pi.
+   Huzzah! Nexus is running on your Pi.
    
    ----------------
    
