@@ -41,6 +41,10 @@
     <system>github</system>
     <url>https://github.com/bhamail/pinexus/issues</url>
   </issueManagement>
+  <ciManagement>
+    <system>Travis CI</system>
+    <url>https://travis-ci.org/bhamail/pinexus</url>
+  </ciManagement>
   <distributionManagement>
     <site>
       <id>github-project-site</id>
