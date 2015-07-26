@@ -13,7 +13,7 @@ SD Card Setup
 OS Setup
 --------
 
-  Steps after first boot (in raspi-config).
+  Steps after first boot (in [raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md)).
   
   Once you have your SDCard with the Raspian OS Image, insert the card into your RaspberryPI. Then connect your HDMI, network, 
   (and optionally USB Keyboard and Mouse), and finally USB power cable. Your Pi should boot up. The original Raspian image brings
