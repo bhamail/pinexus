@@ -15,7 +15,7 @@
 
       <item name="Introduction" href="index.html">
         <item name="Supplies" href="supplies.html"/>
-        <item name="Setup" href="setup.html">
+        <item name="Setup" href="setup.html" collapse="true">
           <item name="SD Card Setup" href="setup.html#SD_Card_Setup"/>
           <item name="OS Setup" href="setup.html#OS_Setup"/>
           <item name="Nexus Setup" href="setup.html#Nexus_Setup"/>
