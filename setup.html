@@ -210,8 +210,10 @@ Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
 <div class="source">
 <pre>  http://&lt;the Pi IP address&gt;:8081
 </pre></div></div>
-<p>The default Nexus administrator credentials are user: <tt>admin</tt>, password: <tt>admin123</tt>.</p>
+<p>The default Nexus administrator credentials are user: <tt>admin</tt>, password: <tt>admin123</tt>.  Huzah! Nexus is running on your Pi.</p>
+<hr />
 <p><i>@TODO Add wrapper/deamon setup notes</i></p>
+<hr />
 <p>Old Steps for JSW - for NX2 (no longer required)</p>
 <hr />
 <p>To compile ARM compatible JSW service binary for ARM:</p>
@@ -221,11 +223,11 @@ Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
 
 <ul>
   
-<li>use jsw build32.sh script</li>
+<li>use jsw <tt>build32.sh</tt> script</li>
 </ul>
 <p>Edits to: nexus/nexus-3.0.0-SNAPSHOT/etc/nexus3-wrapper.conf </p>
 <hr />
-<p>Fix/avoid error: fatal error: jni.h: No such file or directory by setting java home: </p>
+<p>Fix/avoid error: <tt>fatal error: jni.h: No such file or directory</tt> by setting java home: </p>
 
 <div class="source">
 <div class="source">
