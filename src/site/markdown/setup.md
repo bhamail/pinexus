@@ -79,7 +79,8 @@ Nexus Setup
   
       http://<the Pi IP address>:8081
 
-   The default Nexus administrator credentials are user: `admin`, password: `admin123`.
+   The default Nexus administrator credentials are user: `admin`, password: `admin123`. 
+   Huzah! Nexus is running on your Pi.
    
    *@TODO Add wrapper/deamon setup notes*
    
@@ -106,7 +107,7 @@ Nexus Setup
    
    ------------------------------------------------------------
    
-   Fix/avoid error: fatal error: jni.h: No such file or directory by setting java home: 
+   Fix/avoid error: `fatal error: jni.h: No such file or directory` by setting java home: 
    
       $ export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
    
