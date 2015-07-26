@@ -101,7 +101,7 @@ Nexus Setup
 
    Build notes: Worked with wrapper_3.5.25_src.
    
-   - use jsw build32.sh script
+   - use jsw `build32.sh` script
    
    Edits to: nexus/nexus-3.0.0-SNAPSHOT/etc/nexus3-wrapper.conf 
    
