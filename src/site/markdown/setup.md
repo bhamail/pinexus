@@ -17,7 +17,8 @@ OS Setup
   
   Once you have your SDCard with the Raspian OS Image, insert the card into your RaspberryPI. Then connect your HDMI, network, 
   (and optionally USB Keyboard and Mouse), and finally USB power cable. Your Pi should boot up. The original Raspian image brings
-  you to the `raspi-config` screen at first boot. Here are the actions I performed at this point:
+  you to the [raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md) screen at first 
+  boot. Here are the actions I performed at this point:
   
    1. Expand Filesystem - Resize partition to fill sdcard.
    2. Internationalisation Options - Change *i18n, locale* to `en_US.UTF-8`, default to that too. 
@@ -52,9 +53,9 @@ OS Setup
 Nexus Setup
 -----------
 
-  Download the Nexus bundle from (add link).
+  Download the Nexus bundle from (@todo add link).
 
-  Copy the nexus bundle to the pi, in new “nexus” folder: /home/pi/download
+  Copy the nexus bundle to the pi, in new “nexus” folder: /home/pi/nexus
 
       pi@raspberrypi ~ $ pwd
       /home/pi
@@ -73,16 +74,19 @@ Nexus Setup
     
       pi@raspberrypi ~/nexus/nexus-3.0.0-SNAPSHOT/bin $ ./start
   
-  Wait for the `java` process to ease up on the cpu (well below 100% CPU in `top`).
-  Then from your PC, open in a browser to Nexus running on the Pi:
+  While Nexus is starting, you can watch the Pi system load using `top`. Wait for the `java` process to ease up on 
+  the cpu (well below 100% CPU in `top`).  Then from your PC, open in a browser to Nexus running on the Pi:
   
       http://<the Pi IP address>:8081
 
-   The Nexus administrator credentials default to user: `admin`, password: `admin123`.
+   The default Nexus administrator credentials are user: `admin`, password: `admin123`.
    
    *@TODO Add wrapper/deamon setup notes*
+   
+   
+   
   
- Old Steps for JSW - for NX2
+ Old Steps for JSW - for NX2 (no longer required)
  
  ---------------------------
    
