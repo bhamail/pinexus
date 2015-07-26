@@ -63,7 +63,7 @@ Nexus Setup
       
   then: 
   
-      my-pc$ scp ~/sonatype/dev/pi/nx3-alpa-bundle/nexus-3.0.0-SNAPSHOT-bundle.tar.gz pi@10.6.18.100:/home/pi/nexus/
+      my-pc$ scp ~/sonatype/dev/pi/nx3-alpa-bundle/nexus-3.0.0-SNAPSHOT-bundle.tar.gz pi@<the Pi IP address>:/home/pi/nexus/
       
   unzip/untar:
   
