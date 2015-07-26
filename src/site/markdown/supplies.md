@@ -32,3 +32,5 @@ A USB Keyboard and Mouse are optional, as most everything can be done via `ssh`.
     http://www.newegg.com/Product/Product.aspx?Item=N82E16820231577&amp;cm_re=gskill_class10_sdcard_32gb-_-20-231-577-_-Product
 
     ![Pi2](images/supplies/SDCard-20-231-577-Z01.jpg)
+
+Next step: [Setup](setup.html)

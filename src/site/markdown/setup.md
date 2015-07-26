@@ -88,6 +88,8 @@ Nexus Setup
    
    ----------------
    
+Next step: [Doc docs](docdocs.html)
+   
   
  Old Steps for JSW - for NX2 (no longer required)
  
