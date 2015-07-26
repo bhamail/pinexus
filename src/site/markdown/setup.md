@@ -75,7 +75,7 @@ Nexus Setup
       pi@raspberrypi ~/nexus/nexus-3.0.0-SNAPSHOT/bin $ ./start
   
   While Nexus is starting, you can watch the Pi system load using `top`. Wait for the `java` process to ease up on 
-  the cpu (well below 100% CPU in `top`).  Then from your PC, open in a browser to Nexus running on the Pi:
+  the cpu (well below 100% CPU in `top`).  Then from your PC, open the link below to Nexus running on the Pi:
   
       http://<the Pi IP address>:8081
 
