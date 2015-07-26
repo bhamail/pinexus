@@ -82,9 +82,11 @@ Nexus Setup
    The default Nexus administrator credentials are user: `admin`, password: `admin123`. 
    Huzah! Nexus is running on your Pi.
    
+   ----------------
+   
    *@TODO Add wrapper/deamon setup notes*
    
-   
+   ----------------
    
   
  Old Steps for JSW - for NX2 (no longer required)
