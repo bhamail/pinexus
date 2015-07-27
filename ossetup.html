@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20150726" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>PiNexus &#x2013; Issue Tracking</title>
+    <title>PiNexus &#x2013; OS Setup</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.0.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -55,7 +55,7 @@
                     
                 <ul class="nav nav-list">
                               <li class="nav-header">Overview</li>
-                                                                                                                                                                                                                
+                                                                                                                                                                                                                          
       <li>
     
                           <a href="index.html" title="Introduction">
@@ -69,13 +69,48 @@
           <i class="none"></i>
         Supplies</a>
             </li>
-                                                                                                                                                
+                                                                                                                                                          
       <li>
     
                           <a href="setup.html" title="Setup">
-          <i class="icon-chevron-right"></i>
+          <i class="icon-chevron-down"></i>
         Setup</a>
-                  </li>
+                    <ul class="nav nav-list">
+                      
+      <li>
+    
+                          <a href="sdcardsetup.html" title="SD Card Setup">
+          <i class="none"></i>
+        SD Card Setup</a>
+            </li>
+                      
+      <li class="active">
+    
+            <a href="#"><i class="none"></i>OS Setup</a>
+          </li>
+                      
+      <li>
+    
+                          <a href="nexussetup.html" title="Nexus Setup">
+          <i class="none"></i>
+        Nexus Setup</a>
+            </li>
+                      
+      <li>
+    
+                          <a href="nexusdaemonsetup.html" title="Nexus Daemon">
+          <i class="none"></i>
+        Nexus Daemon</a>
+            </li>
+                      
+      <li>
+    
+                          <a href="repotest.html" title="Repo Test">
+          <i class="none"></i>
+        Repo Test</a>
+            </li>
+              </ul>
+        </li>
                       
       <li>
     
@@ -86,90 +121,13 @@
               </ul>
         </li>
                               <li class="nav-header">Project Documentation</li>
-                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                      
       <li>
     
                           <a href="project-info.html" title="Project Information">
-          <i class="icon-chevron-down"></i>
+          <i class="icon-chevron-right"></i>
         Project Information</a>
-                    <ul class="nav nav-list">
-                      
-      <li>
-    
-                          <a href="integration.html" title="Continuous Integration">
-          <i class="none"></i>
-        Continuous Integration</a>
-            </li>
-                      
-      <li>
-    
-                          <a href="dependency-info.html" title="Dependency Information">
-          <i class="none"></i>
-        Dependency Information</a>
-            </li>
-                      
-      <li>
-    
-                          <a href="distribution-management.html" title="Distribution Management">
-          <i class="none"></i>
-        Distribution Management</a>
-            </li>
-                      
-      <li>
-    
-                          <a href="index.html" title="About">
-          <i class="none"></i>
-        About</a>
-            </li>
-                      
-      <li class="active">
-    
-            <a href="#"><i class="none"></i>Issue Tracking</a>
-          </li>
-                      
-      <li>
-    
-                          <a href="license.html" title="Project License">
-          <i class="none"></i>
-        Project License</a>
-            </li>
-                      
-      <li>
-    
-                          <a href="plugin-management.html" title="Plugin Management">
-          <i class="none"></i>
-        Plugin Management</a>
-            </li>
-                      
-      <li>
-    
-                          <a href="plugins.html" title="Project Plugins">
-          <i class="none"></i>
-        Project Plugins</a>
-            </li>
-                      
-      <li>
-    
-                          <a href="team-list.html" title="Project Team">
-          <i class="none"></i>
-        Project Team</a>
-            </li>
-                      
-      <li>
-    
-                          <a href="source-repository.html" title="Source Repository">
-          <i class="none"></i>
-        Source Repository</a>
-            </li>
-                      
-      <li>
-    
-                          <a href="project-summary.html" title="Project Summary">
-          <i class="none"></i>
-        Project Summary</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
                                                                                                         
       <li>
     
@@ -197,14 +155,52 @@
                 
         <div id="bodyColumn"  class="span9" >
                                   
-            <div class="section">
-<h2><a name="Overview"></a>Overview</h2><a name="Overview"></a>
-<p>This project uses github to manage its issues.</p></div>
-<div class="section">
-<h2><a name="Issue_Tracking"></a>Issue Tracking</h2><a name="Issue_Tracking"></a>
-<p>Issues, bugs, and feature requests should be submitted to the following issue tracking system for this project.</p>
+            <h1>OS Setup</h1>
+<p>Steps after first boot (in <a class="externalLink" href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md">raspi-config</a>).</p>
+<p>Once you have your SDCard with the Raspian OS Image, insert the card into your RaspberryPI. Then connect your HDMI, network,  (and optionally USB Keyboard and Mouse), and finally USB power cable. Your Pi should boot up. The original Raspian image brings  you to the <a class="externalLink" href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md">raspi-config</a> screen at first  boot. Here are the actions I performed at this point:</p>
+
+<ol style="list-style-type: decimal">
+  
+<li>Expand Filesystem - Resize partition to fill sdcard.</li>
+  
+<li>
+<p>Internationalisation Options - Change <i>i18n, locale</i> to <tt>en_US.UTF-8</tt>, default to that too.  Also change <i>Timezone</i>. <i>Keyboard</i> to: <tt>Generic 104-key PC</tt>.</p>
+<p>Reboot to allow partition resize to occur.</p></li>
+</ol>
+<p>If you are connected to a network, the Pi console will display the ip address of the machine. Make a note of this  address so you can perform the following steps via <tt>ssh</tt> if you like.  The default userId is <tt>pi</tt>, and password is <tt>raspberry</tt>.</p>
+
 <div class="source">
-<pre><a class="externalLink" href="https://github.com/bhamail/pinexus/issues">https://github.com/bhamail/pinexus/issues</a></pre></div></div>
+<div class="source">
+<pre>  my-pc$ ssh pi@the-Pi-IP-address
+</pre></div></div>
+<p>Update to latest OS packages:</p>
+
+<div class="source">
+<div class="source">
+<pre>  pi@raspberrypi ~ $ sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</pre></div></div>
+<p>Update to latest firmware:</p>
+
+<div class="source">
+<div class="source">
+<pre>  pi@raspberrypi ~ $ sudo rpi-update
+</pre></div></div>
+<p>Pre-requisites:</p>
+
+<ol style="list-style-type: decimal">
+  
+<li>
+<p>Verify java version is at least:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ java -version
+java version &quot;1.8.0&quot;
+Java(TM) SE Runtime Environment (build 1.8.0-b132)
+Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
+</pre></div></div></li>
+</ol>
+<p>Next step: <a href="nexussetup.html">Nexus Setup</a></p>
                   </div>
             </div>
           </div>

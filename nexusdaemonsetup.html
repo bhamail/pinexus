@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20150726" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>PiNexus &#x2013; Setup</title>
+    <title>PiNexus &#x2013; Nexus deamon setup</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.0.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -69,11 +69,13 @@
           <i class="none"></i>
         Supplies</a>
             </li>
-                                                                                                                                                    
-      <li class="active">
+                                                                                                                                                          
+      <li>
     
-            <a href="#"><i class="icon-chevron-down"></i>Setup</a>
-                  <ul class="nav nav-list">
+                          <a href="setup.html" title="Setup">
+          <i class="icon-chevron-down"></i>
+        Setup</a>
+                    <ul class="nav nav-list">
                       
       <li>
     
@@ -96,12 +98,10 @@
         Nexus Setup</a>
             </li>
                       
-      <li>
+      <li class="active">
     
-                          <a href="nexusdaemonsetup.html" title="Nexus Daemon">
-          <i class="none"></i>
-        Nexus Daemon</a>
-            </li>
+            <a href="#"><i class="none"></i>Nexus Daemon</a>
+          </li>
                       
       <li>
     
@@ -155,18 +155,106 @@
                 
         <div id="bodyColumn"  class="span9" >
                                   
-            <h1>Setup</h1>
+            <h1>Nexus deamon setup</h1>
+<p>To enable Nexus to launch automatically at system boot time, make the following changes:</p>
 
 <ol style="list-style-type: decimal">
   
-<li><a href="sdcardsetup.html">SD Card Setup</a></li>
+<li>
+<p>Create a new init.d script, named: <tt>nexusd</tt>, in order to install Nexus as a system service:</p>
   
-<li><a href="ossetup.html">OS Setup</a></li>
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ cd /etc/init.d/
+pi@raspberrypi /etc/init.d $ sudo vi nexusd
+</pre></div></div>
+<p>Paste the following content into this new file, and save the file:</p>
   
-<li><a href="nexussetup.html">Nexus Setup</a></li>
+<div class="source">
+<div class="source">
+<pre>#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          nexusd
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start nexus daemon at boot time
+# Description:       Enable nexus as a system service provided by daemon.
+### END INIT INFO
+
+NEXUS_HOME=&quot;/home/pi/nexus/nexus-3.0.0-SNAPSHOT&quot;
+NEXUS_USER=&quot;pi&quot;
+
+. /lib/lsb/init-functions
+log_daemon_msg &quot;Nexus daemon called with: $@&quot; &quot;nexusd&quot;
+
+exec sudo -u &quot;$NEXUS_USER&quot; -- &quot;$NEXUS_HOME/bin/nexus&quot; &quot;$@&quot;
+
+log_end_msg $?       
+</pre></div></div>
+<p>Here&#x2019;s a file with the same content you could just copy into <tt>/etc/init.d/</tt>: <a href="scripts/nexusd">nexus</a></p></li>
   
-<li><a href="nexusdaemonsetup.html">Nexus Daemon</a></li>
+<li>
+<p>Add execute permission to the new init.d script:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi /etc/init.d $ sudo chmod +x nexusd        
+</pre></div></div></li>
+  
+<li>
+<p>Setup init scripts using <tt>update-rc.d</tt>:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi /etc/init.d $ sudo update-rc.d nexusd defaults
+</pre></div></div></li>
+  
+<li>
+<p>Test the function of the init scripts:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ service nexusd start
+</pre></div></div>
+<p>or, just reboot the Pi and see if nexus is running after reboot:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ service nexusd status
+...
+Running ...
+</pre></div></div>
+<p>If for any reason, you want to remove the deamon, run this command:</p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ sudo update-rc.d nexusd remove -f
+</pre></div></div></li>
 </ol>
+<hr />
+<p>Next step: <a href="repotest.html">Repository Test</a></p>
+<hr />
+<p>Old Steps for JSW - for NX2 (no longer required)</p>
+<hr />
+<p>To compile ARM compatible JSW service binary for ARM:</p>
+<p>see:  <a class="externalLink" href="http://honnix.com/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi/">http://honnix.com/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi/</a></p>
+<p>and:  <a class="externalLink" href="http://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html">http://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html</a></p>
+<p>Build notes: Worked with wrapper_3.5.25_src.</p>
+
+<ul>
+  
+<li>use jsw <tt>build32.sh</tt> script</li>
+</ul>
+<p>Edits to: nexus/nexus-3.0.0-SNAPSHOT/etc/nexus3-wrapper.conf </p>
+<hr />
+<p>Fix/avoid error: <tt>fatal error: jni.h: No such file or directory</tt> by setting java home: </p>
+
+<div class="source">
+<div class="source">
+<pre>  $ export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
+</pre></div></div>
                   </div>
             </div>
           </div>
