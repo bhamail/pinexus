@@ -20,7 +20,8 @@ Repository Test
     Here's a file you can use: : [mysettings.xml](scripts/mysettings.xml) Don't forget to replace `the-Pi-IP-address` 
     with actual IP address of your Pi.
    
-  2. Run a maven build will use your Nexus repo by adding the `-s` parameter to use this settings file:
+  2. Run any maven build with a custom settings file to use your Nexus repo. Just add the `-s` parameter to use this 
+     settings file:
   
         mvn -s mysettings.xml package
 

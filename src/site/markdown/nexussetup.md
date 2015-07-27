@@ -3,7 +3,7 @@ Nexus Setup
 
   Download the Nexus bundle from (@todo add link).
 
-  Copy the nexus bundle to the pi, in new “nexus” folder: /home/pi/nexus
+  Copy the nexus bundle to the pi, in a new “nexus” folder: /home/pi/nexus
 
       pi@raspberrypi ~ $ pwd
       /home/pi
