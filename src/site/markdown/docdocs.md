@@ -25,7 +25,9 @@ To deploy these docs to GH Pages, see: http://stephenc.github.io/wagon-gitsite/
     or
 
         $ git push --set-upstream origin master
-        
+    
+    then
+    
         $ git pull
         $ git symbolic-ref HEAD refs/heads/gh-pages
         $ rm .git/index

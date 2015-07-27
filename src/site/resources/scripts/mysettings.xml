@@ -1,0 +1,9 @@
+<settings>
+  <mirrors>
+    <mirror>
+      <id>mirror-central</id>
+      <mirrorOf>central</mirrorOf>
+      <url>http://the-Pi-IP-address:8081/repository/maven-central/</url>
+    </mirror>
+  </mirrors>
+</settings>
