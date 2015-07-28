@@ -1,4 +1,4 @@
-Nexus deamon setup
+Nexus Deamon Setup
 ==================
    
    To enable Nexus to launch automatically at system boot time, make the following changes:
@@ -55,14 +55,16 @@ Nexus deamon setup
       
         pi@raspberrypi ~ $ sudo update-rc.d nexusd remove -f
         
-   ----------------
+
    
 Next step: [Repository Test](repotest.html)
 
-----------------
- 
+
+
+
+
  Old Steps for JSW - for NX2 (no longer required)
- 
+
  ---------------------------
    
    To compile ARM compatible JSW service binary for ARM:

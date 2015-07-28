@@ -22,7 +22,7 @@ OS Setup
   
   4. Reboot to allow partition resize to occur.
   5. If you are connected to a network, the Pi console displays the ip
-    address of the machine. Make a note of this address so you can perform the
+    address of the machine. **Make a note of this address** so you can perform the
     following steps via `ssh` if you like. The default userId is `pi`, and password is `raspberry`.
     
         my-pc$ ssh pi@the-Pi-IP-address
@@ -35,14 +35,5 @@ OS Setup
     
         pi@raspberrypi ~ $ sudo rpi-update
 
-
-  Pre-requisites:
-  
-   1. Verify java version is at least:
-   
-        pi@raspberrypi ~ $ java -version
-        java version "1.8.0"
-        Java(TM) SE Runtime Environment (build 1.8.0-b132)
-        Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
 
 Next step: [Nexus Setup](nexussetup.html)
