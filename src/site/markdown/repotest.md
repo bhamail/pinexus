@@ -2,9 +2,9 @@ Repository Test
 ===============
 
  Perform the steps below to test the Nexus repository running on the Pi. 
- You'll need the `IP Address` of the Pi you found earlier.
+ You'll need the `IP Address` of the Pi you found earlier when you setup the OS.
  
-  1. Create a simple maven settings file (`mysettings.xml`) that will redirect to you Pi to resolve any required 
+  1. Create a simple maven settings file (`mysettings.xml`) that will redirect to your Pi to resolve any required 
    libraries.
   
         <settings>
