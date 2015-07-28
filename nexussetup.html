@@ -156,41 +156,65 @@
         <div id="bodyColumn"  class="span9" >
                                   
             <h1>Nexus Setup</h1>
-<p>Download the Nexus bundle from (@todo add link).</p>
-<p>Copy the nexus bundle to the pi, in a new &#x201c;nexus&#x201d; folder: /home/pi/nexus</p>
+<p>To install Nexus:</p>
 
+<ol style="list-style-type: decimal">
+  
+<li>
+<p>Verify your java version is at least 1.8.0 or higher:</p>
+  
 <div class="source">
 <div class="source">
-<pre>  pi@raspberrypi ~ $ pwd
-  /home/pi
-  pi@raspberrypi ~ $ mkdir nexus
+<pre>pi@raspberrypi ~ $ java -version
+java version &quot;1.8.0&quot;
+Java(TM) SE Runtime Environment (build 1.8.0-b132)
+Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
+</pre></div></div></li>
+  
+<li>
+<p>Download the Nexus bundle from (@todo add link).</p></li>
+  
+<li>
+<p>Create a new &#x201c;nexus&#x201d; folder at /home/pi/nexus and copy the Nexus bundle into it: </p>
+  
+<div class="source">
+<div class="source">
+<pre>pi@raspberrypi ~ $ pwd
+/home/pi
+pi@raspberrypi ~ $ mkdir nexus
 </pre></div></div>
 <p>then: </p>
-
+  
 <div class="source">
 <div class="source">
-<pre>  my-pc$ scp ~/sonatype/dev/pi/nx3-alpa-bundle/nexus-3.0.0-SNAPSHOT-bundle.tar.gz pi@the-Pi-IP-address:/home/pi/nexus/
-</pre></div></div>
-<p>unzip/untar:</p>
-
+<pre>my-pc$ scp ~/sonatype/dev/pi/nx3-alpa-bundle/nexus-3.0.0-SNAPSHOT-bundle.tar.gz pi@the-Pi-IP-address:/home/pi/nexus/
+</pre></div></div></li>
+  
+<li>
+<p>Unzip/untar the Nexus bundle:</p>
+  
 <div class="source">
 <div class="source">
-<pre>  pi@raspberrypi ~ $ cd nexus
-  pi@raspberrypi ~/nexus $ tar -zxvf nexus-3.0.0-SNAPSHOT-bundle.tar.gz
-</pre></div></div>
+<pre>pi@raspberrypi ~ $ cd nexus
+pi@raspberrypi ~/nexus $ tar -zxvf nexus-3.0.0-SNAPSHOT-bundle.tar.gz
+</pre></div></div></li>
+  
+<li>
 <p>Start nexus. Move into the nexus bin dir and run:</p>
-
+  
 <div class="source">
 <div class="source">
-<pre>  pi@raspberrypi ~/nexus/nexus-3.0.0-SNAPSHOT/bin $ ./start
-</pre></div></div>
+<pre>pi@raspberrypi ~/nexus/nexus-3.0.0-SNAPSHOT/bin $ ./start
+</pre></div></div></li>
+</ol>
 <p>While Nexus is starting, you can watch the Pi system load using <tt>top</tt>. Wait for the <tt>java</tt> process to ease up on  the cpu (well below 100% CPU in <tt>top</tt>). Then from your PC, open the link below to Nexus running on the Pi:</p>
 
 <div class="source">
 <div class="source">
 <pre>  http://the-Pi-IP-address:8081
 </pre></div></div>
-<p>The default Nexus administrator credentials are user: <tt>admin</tt>, password: <tt>admin123</tt>.  Huzzah! Nexus is running on your Pi. </p>
+<p>The default Nexus administrator credentials are user: <tt>admin</tt>, password: <tt>admin123</tt>. </p>
+<p>Huzzah! Nexus is running on your Pi. </p>
 <p>Next step: <a href="nexusdaemonsetup.html">Nexus Deamon</a></p>
                   </div>
             </div>
