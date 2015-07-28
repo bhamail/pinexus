@@ -1,9 +1,11 @@
 Pi Supplies
 ===========
 
-Here's a quick list of hardware you need to build this puppy. Not shown, but any HDMI Monitor should do. I'm leaving
-out things like a network cable, or USB Wifi adapter, HDMI cable, HDMI-to-DVI adapter, or Analog Audio/Video cable.
-A USB Keyboard and Mouse are optional, as most everything can be done via `ssh`.
+Here's a quick list of hardware you need to build this puppy. In addition to
+the items listed below, you need a network connection (network cable or USB
+Wifi adapter) and video display (HDMI cable, HDMI-to-DVI adapter, or Analog
+Audo/Video cable). A USB Keyboard and Mouse are optional, as most everything
+can be done via `ssh`.
 
   1. $8.59 - Pi 2 Model B case
   
@@ -32,5 +34,7 @@ A USB Keyboard and Mouse are optional, as most everything can be done via `ssh`.
     http://www.newegg.com/Product/Product.aspx?Item=N82E16820231577&amp;cm_re=gskill_class10_sdcard_32gb-_-20-231-577-_-Product
 
     ![Pi2](images/supplies/SDCard-20-231-577-Z01.jpg)
+
+Total cost: $62.34
 
 Next step: [Setup](setup.html)
