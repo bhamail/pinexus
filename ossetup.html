@@ -156,35 +156,63 @@
         <div id="bodyColumn"  class="span9" >
                                   
             <h1>OS Setup</h1>
-<p>Steps after first boot (in <a class="externalLink" href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md">raspi-config</a>).</p>
-<p>Once you have your SDCard with the Raspian OS Image, insert the card into your RaspberryPI. Then connect your HDMI, network,  (and optionally USB Keyboard and Mouse), and finally USB power cable. Your Pi should boot up. The original Raspian image brings  you to the <a class="externalLink" href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md">raspi-config</a> screen at first  boot. Here are the actions I performed at this point:</p>
+<p>Once you have an SD Card with the Raspian OS Image, you can setup the operating system as follows:</p>
 
 <ol style="list-style-type: decimal">
   
-<li>Expand Filesystem - Resize partition to fill sdcard.</li>
+<li>Insert the card into your RaspberryPI.</li>
+  
+<li>Connect the following items:
+  
+<ul>
+    
+<li>video (HDMI)</li>
+    
+<li>network</li>
+    
+<li>USB keyboard (optional)</li>
+    
+<li>USBmouse (optional)</li>
+    
+<li>USB power cable</li>
+  </ul></li>
   
 <li>
-<p>Internationalisation Options - Change <i>i18n, locale</i> to <tt>en_US.UTF-8</tt>, default to that too.  Also change <i>Timezone</i>. <i>Keyboard</i> to: <tt>Generic 104-key PC</tt>.</p>
+<p>Your Pi should boot up and display the <a class="externalLink" href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md">raspi-config</a> screen (at first boot).  At this point, you can use <a class="externalLink" href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md">raspi-config</a> to set configuration options such as:</p>
+<p>a. Expand Filesystem - Resize partition to fill SD Card.<br /> b. Internationalisation Options - Change the settings for Locale, Timezone, and Keyboard:</p>
+  
+<ul>
+    
+<li><i>i18n, locale</i> to <tt>en_US.UTF-8</tt>,</li>
+    
+<li><i>Timezone</i> to your local timezone</li>
+    
+<li><i>Keyboard</i> to: <tt>Generic 104-key PC</tt>.</li>
+  </ul></li>
+  
+<li>
 <p>Reboot to allow partition resize to occur.</p></li>
-</ol>
-<p>If you are connected to a network, the Pi console will display the ip address of the machine. Make a note of this  address so you can perform the following steps via <tt>ssh</tt> if you like.  The default userId is <tt>pi</tt>, and password is <tt>raspberry</tt>.</p>
-
+  
+<li>
+<p>If you are connected to a network, the Pi console displays the ip address of the machine. Make a note of this address so you can perform the following steps via <tt>ssh</tt> if you like. The default userId is <tt>pi</tt>, and password is <tt>raspberry</tt>.</p>
+  
 <div class="source">
 <div class="source">
-<pre>  my-pc$ ssh pi@the-Pi-IP-address
+<pre>my-pc$ ssh pi@the-Pi-IP-address
 </pre></div></div>
 <p>Update to latest OS packages:</p>
-
+  
 <div class="source">
 <div class="source">
-<pre>  pi@raspberrypi ~ $ sudo apt-get update &amp;&amp; sudo apt-get upgrade
+<pre>pi@raspberrypi ~ $ sudo apt-get update &amp;&amp; sudo apt-get upgrade
 </pre></div></div>
 <p>Update to latest firmware:</p>
-
+  
 <div class="source">
 <div class="source">
-<pre>  pi@raspberrypi ~ $ sudo rpi-update
-</pre></div></div>
+<pre>pi@raspberrypi ~ $ sudo rpi-update
+</pre></div></div></li>
+</ol>
 <p>Pre-requisites:</p>
 
 <ol style="list-style-type: decimal">
