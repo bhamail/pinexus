@@ -91,6 +91,14 @@
               </goals>
             </execution>
           </executions>
+          <dependencies>
+            <!-- adds support for asciidoc in maven site. -->
+            <dependency>
+              <groupId>org.asciidoctor</groupId>
+              <artifactId>asciidoctor-maven-plugin</artifactId>
+              <version>1.5.2.1</version>
+            </dependency>
+          </dependencies>
         </plugin>
 
         <plugin>

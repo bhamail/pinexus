@@ -8,7 +8,11 @@ Here is some documentation about how this documentation is written. Feel free to
 
   1. Markdown - Much of this site is written in the [Markdown format](http://daringfireball.net/projects/markdown/syntax).
 
-  2. Doc source files are located in: [src/site/markdown](https://github.com/bhamail/pinexus/tree/master/src/site/markdown).
+    Markdown source files are located in: [src/site/markdown](https://github.com/bhamail/pinexus/tree/master/src/site/markdown).
+    
+  2. Asciidoc - Some of this site is also written in the [Asciidoc format](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/)
+  
+    Ascidoc source files are located in: [src/site/asciidoc](https://github.com/bhamail/pinexus/tree/master/src/site/asciidoc)
   
   3. You may also find some `README.md` files scattered around the source tree as well.
 
