@@ -24,7 +24,7 @@ My IP Address is x.x.x.x
 
 Raspian GNU/Linux 7 raspberrypi tty1
 
-raspberryipi login: _
+raspberrypi login: _
 ----
 +
   . Use this IP Address to connect to the Pi via `ssh`. The default userId is `pi`, and password is `raspberry`.
