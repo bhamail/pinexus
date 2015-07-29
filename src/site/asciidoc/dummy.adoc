@@ -1,3 +1,0 @@
-== Dummy Page Heading
-
-This is an asciidoc placeholder doc.
