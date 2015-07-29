@@ -31,7 +31,7 @@ Nexus Deamon Setup
         
         log_end_msg $?       
 
-      Here's a file with the same content you could just copy into `/etc/init.d/`: [nexus](scripts/nexusd)
+      Here's a file with the same content you could just copy into `/etc/init.d/`: [nexusd](scripts/nexusd)
         
    3. Add execute permission to the new init.d script:
 
