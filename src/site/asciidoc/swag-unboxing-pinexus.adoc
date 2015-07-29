@@ -19,19 +19,24 @@ Your nifty new RaspberryPi with Nexus just arrived. Joy! There is no need to go 
 
  . Once you connect the USB Power cable, the Pi will boot up. You will see startup messages on the connected
    monitor. One of the last messages printed during startup is the Pi IP Address, a few lines before the login prompt:
++
 ----
-    My IP Address is x.x.x.x
+My IP Address is x.x.x.x
 
-    Raspian GNU/Linux 7 raspberrypi tty1
+Raspian GNU/Linux 7 raspberrypi tty1
 
-    raspberryipi login: _
+raspberryipi login: _
 ----
-
++
   . You can use this IP Address to connect to the Pi via `ssh`. The default userId is `pi`, and password is `raspberry`.
-
-      my-pc$ ssh pi@the-Pi-IP-address
-
-    You can use this IP Address to connect to Nexus running on the pi. The default Nexus administrator credentials
-    are user: `admin`, password: `admin123`.
-
-       http://the-Pi-IP-address:8081
++
+----
+my-pc$ ssh pi@the-Pi-IP-address
+----
++
+You can use this IP Address to connect to Nexus running on the pi. The default Nexus administrator credentials
+are user: `admin`, password: `admin123`.
++
+----
+http://the-Pi-IP-address:8081
+----
