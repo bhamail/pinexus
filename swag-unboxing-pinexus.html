@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20150728" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>PiNexus &#x2013; Dependency Updates Report</title>
+    <title>PiNexus &#x2013; </title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.4.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -96,34 +96,13 @@
           <span class="icon-chevron-right"></span>
         Project Information</a>
                   </li>
-                                                                                                                
+                                                                                                      
       <li>
   
                           <a href="project-reports.html" title="Project Reports">
-          <span class="icon-chevron-down"></span>
+          <span class="icon-chevron-right"></span>
         Project Reports</a>
-                    <ul class="nav nav-list">
-                    
-      <li class="active">
-  
-            <a href="#"><span class="none"></span>Dependency Updates Report</a>
-          </li>
-                    
-      <li>
-  
-                          <a href="plugin-updates-report.html" title="Plugin Updates Report">
-          <span class="none"></span>
-        Plugin Updates Report</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="property-updates-report.html" title="Property Updates Report">
-          <span class="none"></span>
-        Property Updates Report</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
             </ul>
                 
                     
@@ -145,39 +124,85 @@
                 
         <div id="bodyColumn"  class="span10" >
                                   
-            <div class="section">
-<h2><a name="Overview"></a>Overview</h2>
-<p>This report summarizes newer versions that may be available for your project's various dependencies.</p>
-<table border="0" class="table table-striped">
-<tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td># of dependencies using the latest version available</td>
-<td>0</td></tr>
-<tr class="b">
-<td><img src="images/icon_warning_sml.gif" alt="" /></td>
-<td># of dependencies where the next version available is smaller than an incremental version update</td>
-<td>0</td></tr>
-<tr class="a">
-<td><img src="images/icon_warning_sml.gif" alt="" /></td>
-<td># of dependencies where the next version available is an incremental version update</td>
-<td>0</td></tr>
-<tr class="b">
-<td><img src="images/icon_warning_sml.gif" alt="" /></td>
-<td># of dependencies where the next version available is a minor version update</td>
-<td>0</td></tr>
-<tr class="a">
-<td><img src="images/icon_warning_sml.gif" alt="" /></td>
-<td># of dependencies where the next version available is a major version update</td>
-<td>0</td></tr></table>
-<div class="section">
-<h3><a name="Dependency_Management"></a>Dependency Management</h3>
-<p>This project does not declare any dependencies in a dependencyManagement section.</p></div>
-<div class="section">
-<h3><a name="Dependencies"></a>Dependencies</h3>
-<p>This project does not declare any dependencies.</p></div></div>
-<div class="section">
-<h2><a name="Dependency_Updates"></a>Dependency Updates</h2>
-<p></p></div>
+            <div class="sect1">
+<h2 id="a_pinexus_swag_quick_setup">PiNexus Swag - Quick Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your nifty new RaspberryPi with Nexus just arrived. Joy! There is no need to go through all the setup steps
+ on the <a href="http://bhamail.github.com/pinexus/">PiNexus website</a> (<a href="http://bhamail.github.com/pinexus/" class="bare">http://bhamail.github.com/pinexus/</a>).
+ All you need to do is make the connections shown below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Verify the card is installed in the SDCard slot on the RaspberryPI.
+<span class="image"><img src="images/setup/pi-sd-3-small.jpg" alt="SDCard slot"/></span></p>
+</li>
+<li>
+<p>Connect the following items:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Video (HDMI)
+<span class="image"><img src="images/setup/hdmi-RBP3-small.jpg" alt="HDMI"/></span></p>
+</li>
+<li>
+<p>Network
+<span class="image"><img src="images/setup/ethernet-RBP3-small.jpg" alt="Ethernet"/></span></p>
+</li>
+<li>
+<p>USB keyboard (optional)</p>
+</li>
+<li>
+<p>USB mouse (optional)</p>
+</li>
+<li>
+<p>USB power cable
+<span class="image"><img src="images/setup//usb-power-RBP3-small.jpg" alt="USB Power"/></span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Once you connect the USB Power cable, the Pi will boot up. You will see startup messages on the connected
+monitor. One of the last messages printed during startup is the Pi IP Address, a few lines before the login prompt:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    My IP Address is x.x.x.x
+
+    Raspian GNU/Linux 7 raspberrypi tty1
+
+    raspberryipi login: _</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You can use this IP Address to connect to the Pi via <code>ssh</code>. The default userId is <code>pi</code>, and password is <code>raspberry</code>.</p>
+<div class="literalblock">
+<div class="content">
+<pre>my-pc$ ssh pi@the-Pi-IP-address</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>You can use this IP Address to connect to Nexus running on the pi. The default Nexus administrator credentials
+are user: `admin`, password: `admin123`.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://the-Pi-IP-address:8081</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
                   </div>
             </div>
           </div>
