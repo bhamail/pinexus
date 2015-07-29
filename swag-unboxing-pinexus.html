@@ -128,9 +128,8 @@
 <h2 id="a_pinexus_swag_quick_setup">PiNexus Swag - Quick Setup</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Your nifty new RaspberryPi with Nexus just arrived. Joy! There is no need to go through all the setup steps
- on the <a href="http://bhamail.github.com/pinexus/">PiNexus website</a> (<a href="http://bhamail.github.com/pinexus/" class="bare">http://bhamail.github.com/pinexus/</a>).
- All you need to do is make the connections shown below.</p>
+<p>Your RaspberryPi with Nexus just arrived. Joy! No need to go through all the setup steps
+ on the <a href="http://bhamail.github.com/pinexus/">PiNexus website</a>. Just make the connections shown below.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -159,52 +158,35 @@
 <li>
 <p>USB power cable
 <span class="image"><img src="images/setup//usb-power-RBP3-small.jpg" alt="USB Power"/></span></p>
-<div class="literalblock">
-<div class="content">
-<pre>| Video (HDMI)                                  | Network
-| image:images/setup/hdmi-RBP3-small.jpg[HDMI]</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>| image:images/setup/ethernet-RBP3-small.jpg[Ethernet]</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Once you connect the USB Power cable, the Pi will boot up. You will see startup messages on the connected
-monitor. One of the last messages printed during startup is the Pi IP Address, a few lines before the login prompt:</p>
-</li>
-</ol>
-</div>
+<p>The Pi will boot up when you connect the USB Power cable, and display startup messages on the connected
+monitor. One of the last messages shown during startup is the Pi IP Address, a few lines before the login prompt:</p>
 <div class="listingblock">
 <div class="content">
-<pre>    My IP Address is x.x.x.x
+<pre>My IP Address is x.x.x.x
 
-    Raspian GNU/Linux 7 raspberrypi tty1
+Raspian GNU/Linux 7 raspberrypi tty1
 
-    raspberryipi login: _</pre>
+raspberryipi login: _</pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
-<p>You can use this IP Address to connect to the Pi via <code>ssh</code>. The default userId is <code>pi</code>, and password is <code>raspberry</code>.</p>
-<div class="literalblock">
+<p>Use this IP Address to connect to the Pi via <code>ssh</code>. The default userId is <code>pi</code>, and password is <code>raspberry</code>.</p>
+<div class="listingblock">
 <div class="content">
 <pre>my-pc$ ssh pi@the-Pi-IP-address</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>You can use this IP Address to connect to Nexus running on the pi. The default Nexus administrator credentials
-are user: `admin`, password: `admin123`.</pre>
+<div class="paragraph">
+<p>You can use this IP Address to connect to Nexus running on the pi. The default Nexus administrator credentials
+are user: <code>admin</code>, password: <code>admin123</code>.</p>
 </div>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
 <pre>http://the-Pi-IP-address:8081</pre>
 </div>
