@@ -26,6 +26,11 @@
       <email>danrollo@gmail.com</email>
       <timezone>-4</timezone>
     </developer>
+    <developer>
+      <id>annrollo</id>
+      <name>Ann Rollo</name>
+      <timezone>-4</timezone>
+    </developer>
   </developers>
 
   <prerequisites>
