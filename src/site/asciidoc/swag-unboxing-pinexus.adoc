@@ -1,8 +1,7 @@
 == PiNexus Swag - Quick Setup
 
-Your nifty new RaspberryPi with Nexus just arrived. Joy! There is no need to go through all the setup steps
- on the link:http://bhamail.github.com/pinexus/[PiNexus website] (http://bhamail.github.com/pinexus/).
- All you need to do is make the connections shown below.
+Your RaspberryPi with Nexus just arrived. Joy! No need to go through all the setup steps
+ on the link:http://bhamail.github.com/pinexus/[PiNexus website]. Just make the connections shown below.
 
  . Verify the card is installed in the SDCard slot on the RaspberryPI.
    image:images/setup/pi-sd-3-small.jpg[SDCard slot]
@@ -17,8 +16,8 @@ Your nifty new RaspberryPi with Nexus just arrived. Joy! There is no need to go 
        *  USB power cable
           image:images/setup//usb-power-RBP3-small.jpg[USB Power]
 
- . Once you connect the USB Power cable, the Pi will boot up. You will see startup messages on the connected
-   monitor. One of the last messages printed during startup is the Pi IP Address, a few lines before the login prompt:
+ . The Pi will boot up when you connect the USB Power cable, and display startup messages on the connected
+   monitor. One of the last messages shown during startup is the Pi IP Address, a few lines before the login prompt:
 +
 ----
 My IP Address is x.x.x.x
@@ -28,7 +27,7 @@ Raspian GNU/Linux 7 raspberrypi tty1
 raspberryipi login: _
 ----
 +
-  . You can use this IP Address to connect to the Pi via `ssh`. The default userId is `pi`, and password is `raspberry`.
+  . Use this IP Address to connect to the Pi via `ssh`. The default userId is `pi`, and password is `raspberry`.
 +
 ----
 my-pc$ ssh pi@the-Pi-IP-address
