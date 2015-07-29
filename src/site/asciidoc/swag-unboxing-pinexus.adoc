@@ -4,7 +4,7 @@ Your nifty new RaspberryPi with Nexus just arrived. Joy! There is no need to go 
  on the link:http://bhamail.github.com/pinexus/[PiNexus website] (http://bhamail.github.com/pinexus/).
  All you need to do is make the connections shown below.
 
- . Verify the card is already installed in the SDCard slot on the RaspberryPI.
+ . Verify the card is installed in the SDCard slot on the RaspberryPI.
    image:images/setup/pi-sd-3-small.jpg[SDCard slot]
 
  . Connect the following items:
