@@ -1,21 +1,21 @@
 == PiNexus Swag - Quick Setup
 
 Your nifty new RaspberryPi with Nexus just arrived. Joy! There is no need to go through all the setup steps
- on the link:http://bhamail.github.com/pinexus/[PiNexus website]. All you need to do is make the connections
- shown below.
+ on the link:http://bhamail.github.com/pinexus/[PiNexus website] (http://bhamail.github.com/pinexus/).
+ All you need to do is make the connections shown below.
 
- . Verify the card is already installed in the sdcard slot on the RaspberryPI.
-   image:images/setup/pi-sd-3.jpg[SDCard slot]
+ . Verify the card is already installed in the SDCard slot on the RaspberryPI.
+   image:images/setup/pi-sd-3-small.jpg[SDCard slot]
 
  . Connect the following items:
        *  Video (HDMI)
-          image:images/setup/hdmi-RBP3-640x353.jpg[HDMI]
+          image:images/setup/hdmi-RBP3-small.jpg[HDMI]
        *  Network
-          image:images/setup/ethernet-RBP3-640x353.jpg[Ethernet]
+          image:images/setup/ethernet-RBP3-small.jpg[Ethernet]
        *  USB keyboard (optional)
        *  USB mouse (optional)
        *  USB power cable
-          image:images/setup//usb-power-RBP3-640x353.jpg[USB Power]
+          image:images/setup//usb-power-RBP3-small.jpg[USB Power]
 
  . Once you connect the USB Power cable, the Pi will boot up. You will see startup messages on the connected
    monitor. One of the last messages printed during startup is the Pi IP Address, a few lines before the login prompt:
