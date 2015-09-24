@@ -53,8 +53,8 @@
   </ciManagement>
   <distributionManagement>
     <site>
-      <id>github-project-site</id>
-      <url>gitsite:git@github.com/bhamail/pinexus.git</url>
+      <id>gh-pages.git.server</id>
+      <url>scm:git:git@github.com:bhamail/pinexus.git</url>
     </site>
   </distributionManagement>
 
@@ -87,13 +87,43 @@
         </plugin>
 
         <plugin>
+          <!-- used to deploy site to gh-pages. -->
+          <artifactId>maven-scm-publish-plugin</artifactId>
+          <version>1.1</version>
+          <configuration>
+            <!-- This is important for git. -->
+            <scmBranch>gh-pages</scmBranch>
+          </configuration>
+          <executions>
+            <execution>
+              <id>scm-publish</id>
+              <phase>site-deploy</phase>
+              <goals>
+                <goal>publish-scm</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.4</version>
+          <configuration>
+            <!-- we use maven-scm-publish-plugin to deploy, so skip this. -->
+            <skipDeploy>true</skipDeploy>
+          </configuration>
           <executions>
             <execution>
               <id>attach-descriptor</id>
               <goals>
                 <goal>attach-descriptor</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>stage-for-scm-publish</id>
+              <phase>post-site</phase>
+              <goals>
+                <goal>stage</goal>
               </goals>
             </execution>
           </executions>
@@ -171,28 +201,13 @@
 
       </plugins>
     </pluginManagement>
-    <!-- BEGIN: extensions supporting 'gitsite' wagon, to publish maven site to git hub pages.
-    See: http://khuxtable.github.com/wagon-gitsite/usage.html
-    -->
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.scm</groupId>
-        <artifactId>maven-scm-provider-gitexe</artifactId>
-        <version>1.3</version>
-      </extension>
-      <extension>
-        <groupId>org.apache.maven.scm</groupId>
-        <artifactId>maven-scm-manager-plexus</artifactId>
-        <version>1.3</version>
-      </extension>
-      <extension>
-        <groupId>org.kathrynhuxtable.maven.wagon</groupId>
-        <artifactId>wagon-gitsite</artifactId>
-        <version>0.3.1</version>
-        <!--<version>0.4-SNAPSHOT</version>-->
-      </extension>
-    </extensions>
-  <!-- END: extensions supporting 'gitsite' wagon, to publish maven site to git hub pages. -->
+    <plugins>
+      <!-- This exists only to trigger the maven-scm-publish-plugin to deploy the site to gh-pages. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-publish-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
 
   <reporting>

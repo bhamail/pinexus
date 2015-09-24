@@ -20,7 +20,7 @@ Here is some documentation about how this documentation is written. Feel free to
 Doc Publishing
 --------------
 
-To deploy these docs to GH Pages, see: http://stephenc.github.io/wagon-gitsite/
+To deploy these docs to GH Pages, we use [maven-scm-publish-plugin](https://maven.apache.org/plugins/maven-scm-publish-plugin/)
 
  1. One time - create an empty `gh-pages` branch and push to github.
     
