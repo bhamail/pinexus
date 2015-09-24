@@ -10,7 +10,7 @@ Nexus Setup
         Java(TM) SE Runtime Environment (build 1.8.0-b132)
         Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
 
-  2. Download the Nexus bundle from (@todo add link).
+  2. Download the Nexus bundle from [Nexus 3 Milestone 5](https://support.sonatype.com/entries/96157708).
 
   3. Create a new "nexus" folder at /home/pi/nexus and copy the Nexus bundle into it: 
 
