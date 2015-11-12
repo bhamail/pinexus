@@ -61,30 +61,24 @@ Next step: [Repository Test](repotest.html)
 
 
 
-
+-----------------
 
  Old Steps for JSW - for NX2 (no longer required)
 
  ---------------------------
    
-   To compile ARM compatible JSW service binary for ARM:
+ - To compile ARM compatible JSW service binary for ARM:
     
-   see:
-    http://honnix.com/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi/
+    see: http://honnix.com/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi/
+    
+    and: http://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html
 
-   and:
-    http://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html
+    Build notes: Worked with wrapper_3.5.25_src.
+   
+    - use jsw `build32.sh` script
+   
+    - Fix/avoid error: `fatal error: jni.h: No such file or directory` by setting java home: 
+   
+        $ export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
 
-   Build notes: Worked with wrapper_3.5.25_src.
-   
-   - use jsw `build32.sh` script
-   
-   Edits to: nexus/nexus-3.0.0-SNAPSHOT/etc/nexus3-wrapper.conf 
-   
-   ------------------------------------------------------------
-   
-   Fix/avoid error: `fatal error: jni.h: No such file or directory` by setting java home: 
-   
-      $ export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
-   
-   
+
