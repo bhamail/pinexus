@@ -72,6 +72,10 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>tidy-maven-plugin</artifactId>
           <version>1.0-beta-1</version>
+          <!-- v1.0.0 giving error:
+          [ERROR] Failed to execute goal org.codehaus.mojo:tidy-maven-plugin:1.0.0:pom (default-cli) on project pinexus-parent: Illegal processing instruction target ("xml"); xml (case insensitive) is reserved by the specs.
+          -->
+          <!--<version>1.0.0</version>-->
         </plugin>
 
         <plugin>
@@ -107,7 +111,8 @@
 
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.4</version>
+          <!-- maven-site-plugin 3.5.x is still borked, unless new doxia dependency is explicitly defined. -->
+          <version>3.6</version>
           <configuration>
             <!-- we use maven-scm-publish-plugin to deploy, so skip this. -->
             <skipDeploy>true</skipDeploy>
@@ -132,25 +137,31 @@
             <dependency>
               <groupId>org.asciidoctor</groupId>
               <artifactId>asciidoctor-maven-plugin</artifactId>
-              <version>1.5.2.1</version>
+              <version>1.5.3</version>
+            </dependency>
+            <!-- required to make site plugin 3.6 happy. -->
+            <dependency>
+              <groupId>org.apache.maven.doxia</groupId>
+              <artifactId>doxia-core</artifactId>
+              <version>1.7</version>
             </dependency>
           </dependencies>
         </plugin>
 
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>2.8</version>
+          <version>2.9</version>
         </plugin>
 
         <!-- transitive plugin dep versions - begin -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>2.6.1</version>
+          <version>3.0.0</version>
         </plugin>
 
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.3</version>
+          <version>3.5.1</version>
         </plugin>
 
         <plugin>
@@ -160,7 +171,7 @@
 
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.5.5</version>
+          <version>2.6</version>
         </plugin>
 
         <plugin>
@@ -170,7 +181,7 @@
 
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.0.0</version>
         </plugin>
 
         <plugin>
@@ -180,7 +191,7 @@
 
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.18.1</version>
+          <version>2.19.1</version>
         </plugin>
 
         <plugin>
@@ -195,7 +206,7 @@
 
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.2</version>
+          <version>2.5.3</version>
         </plugin>
         <!-- transitive plugin dep versions - end -->
 
