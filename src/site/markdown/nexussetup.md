@@ -37,7 +37,7 @@ Nexus Setup
         # /home/pi/nexus/nexus-3.3.1-01/hs_err_pid1755.log
         
      A Pi currently only has 1GB of RAM, so you need to configure Nexus to use less RAM than
-     normal, and allocate more to the direct memory for use by the 
+     normal, and allocate more to direct memory for use by the 
      [database](https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-).
      Move into the nexus bin dir, and edit the `nexusvm.options` file:
      
