@@ -119,7 +119,7 @@ pi@raspberrypi:~/nexus $ tar -zxvf nexus-3.3.1-01-unix.tar.gz
 # An error report file with more information is saved as:
 # /home/pi/nexus/nexus-3.3.1-01/hs_err_pid1755.log
 </pre></div></div>
-<p>A Pi currently only has 1GB of RAM, so you need to configure Nexus to use less RAM than  normal, and allocate more to the direct memory for use by the  <a class="externalLink" href="https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-">database</a>.  Move into the nexus bin dir, and edit the <tt>nexusvm.options</tt> file:</p>
+<p>A Pi currently only has 1GB of RAM, so you need to configure Nexus to use less RAM than  normal, and allocate more to direct memory for use by the  <a class="externalLink" href="https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-">database</a>.  Move into the nexus bin dir, and edit the <tt>nexusvm.options</tt> file:</p>
   
 <div class="source">
 <div class="source"><pre class="prettyprint">pi@raspberrypi:~/nexus/nexus-3.3.1-01/bin vi nexus.vmoptions
