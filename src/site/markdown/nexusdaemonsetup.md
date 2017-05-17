@@ -5,8 +5,8 @@ Nexus Deamon Setup
    
    1. Create a new init.d script, named: `nexusd`, in order to install Nexus as a system service: 
    
-        pi@raspberrypi ~ $ cd /etc/init.d/
-        pi@raspberrypi /etc/init.d $ sudo vi nexusd
+        pi@raspberrypi:~ $ cd /etc/init.d/
+        pi@raspberrypi:/etc/init.d $ sudo vi nexusd
         
       Paste the following content into this new file, and save the file:
    
@@ -35,25 +35,25 @@ Nexus Deamon Setup
         
    3. Add execute permission to the new init.d script:
 
-        pi@raspberrypi /etc/init.d $ sudo chmod +x nexusd        
+        pi@raspberrypi:/etc/init.d $ sudo chmod +x nexusd        
 
    4. Setup init scripts using `update-rc.d`:
    
-        pi@raspberrypi /etc/init.d $ sudo update-rc.d nexusd defaults
+        pi@raspberrypi:/etc/init.d $ sudo update-rc.d nexusd defaults
         
    5. Test the function of the init scripts:
    
-        pi@raspberrypi ~ $ service nexusd start
+        pi@raspberrypi:~ $ service nexusd start
         
       or, just reboot the Pi and see if nexus is running after reboot:
       
-        pi@raspberrypi ~ $ service nexusd status
+        pi@raspberrypi:~ $ service nexusd status
         ...
         Running ...
         
       If for any reason, you want to remove the deamon, run this command:
       
-        pi@raspberrypi ~ $ sudo update-rc.d nexusd remove -f
+        pi@raspberrypi:~ $ sudo update-rc.d nexusd remove -f
         
 
    
