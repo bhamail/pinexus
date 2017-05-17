@@ -21,7 +21,7 @@ Nexus Deamon Setup
         # Description:       Enable nexus as a system service provided by daemon.
         ### END INIT INFO
       
-        NEXUS_HOME="/home/pi/nexus/nexus-3.0.0-SNAPSHOT"
+        NEXUS_HOME="/home/pi/nexus/nexus-3.3.1-01"
         NEXUS_USER="pi"
         
         . /lib/lsb/init-functions
@@ -32,6 +32,8 @@ Nexus Deamon Setup
         log_end_msg $?       
 
       Here's a file with the same content you could just copy into `/etc/init.d/`: [nexusd](scripts/nexusd)
+      
+      Be sure to edit the path if your NEXUS_HOME is different (e. g. using a different version).
         
    3. Add execute permission to the new init.d script:
 
@@ -43,11 +45,11 @@ Nexus Deamon Setup
         
    5. Test the function of the init scripts:
    
-        pi@raspberrypi:~ $ service nexusd start
+        pi@raspberrypi:~ $ sudo service nexusd start
         
       or, just reboot the Pi and see if nexus is running after reboot:
       
-        pi@raspberrypi:~ $ service nexusd status
+        pi@raspberrypi:~ $ sudo service nexusd status
         ...
         Running ...
         
