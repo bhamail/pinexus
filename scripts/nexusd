@@ -9,7 +9,7 @@
 # Description:       Enable nexus to run as a system service provided by daemon.
 ### END INIT INFO
 
-NEXUS_HOME="/home/pi/nexus/nexus-3.3.1-01"
+NEXUS_HOME="/home/pi/nexus/nexus-${version-number-latest-nexus-repo-release-number}"
 NEXUS_USER="pi"
 
 . /lib/lsb/init-functions
