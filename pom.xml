@@ -58,6 +58,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <version-maven-linkcheck-plugin>1.2</version-maven-linkcheck-plugin>
+
+    <!-- Update this value and redeploy site when new versions of NXRM are released. -->
+    <version-number-latest-nexus-repo-release-number>3.14.0-04</version-number-latest-nexus-repo-release-number>
   </properties>
 
   <build>
@@ -239,6 +242,18 @@
         <artifactId>maven-scm-publish-plugin</artifactId>
       </plugin>
     </plugins>
+
+    <resources>
+      <resource>
+        <!-- keep nexusd deamon script example updated with latest nexus rm release version. -->
+        <directory>src/site/resources/scripts</directory>
+        <includes>
+          <include>nexusd</include>
+        </includes>
+        <filtering>true</filtering>
+        <targetPath>${project.build.directory}/site/scripts/</targetPath>
+      </resource>
+    </resources>
   </build>
 
   <reporting>

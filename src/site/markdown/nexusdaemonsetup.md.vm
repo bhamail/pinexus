@@ -9,7 +9,7 @@ Nexus Deamon Setup
         pi@raspberrypi:/etc/init.d $ sudo vi nexusd
         
       Paste the following content into this new file, and save the file:
-   
+ #[[
         #!/bin/sh
         ### BEGIN INIT INFO
         # Provides:          nexusd
@@ -20,8 +20,8 @@ Nexus Deamon Setup
         # Short-Description: Start nexus daemon at boot time
         # Description:       Enable nexus as a system service provided by daemon.
         ### END INIT INFO
-      
-        NEXUS_HOME="/home/pi/nexus/nexus-3.14.0-04"
+]]#
+        NEXUS_HOME="/home/pi/nexus/nexus-${version-number-latest-nexus-repo-release-number}"
         NEXUS_USER="pi"
         
         . /lib/lsb/init-functions
