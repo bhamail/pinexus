@@ -21,7 +21,7 @@ Nexus Deamon Setup
         # Description:       Enable nexus as a system service provided by daemon.
         ### END INIT INFO
       
-        NEXUS_HOME="/home/pi/nexus/nexus-3.3.1-01"
+        NEXUS_HOME="/home/pi/nexus/nexus-3.14.0-04"
         NEXUS_USER="pi"
         
         . /lib/lsb/init-functions
