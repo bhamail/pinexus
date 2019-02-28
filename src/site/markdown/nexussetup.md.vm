@@ -5,7 +5,7 @@ Nexus Setup
   
   1. Use the latest Java 8 release version of Java available from OpenJDK.
 
-     Java runtimes above Java 8 have not been verified - do not use them:
+     Java runtimes above Java 8 [have not been verified](https://help.sonatype.com/repomanager3/system-requirements#SystemRequirements-Java) - do not use them:
     
         pi@raspberrypi:~ $ java -version
         java version "1.8.0"
