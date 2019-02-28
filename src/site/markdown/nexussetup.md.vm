@@ -3,7 +3,9 @@ Nexus Setup
  
  To install Nexus:
   
-  1. Verify your java version is at least 1.8.0 or higher:
+  1. Use the latest Java 8 release version of Java available from OpenJDK.
+
+     Java runtimes above Java 8 have not been verified - do not use them:
     
         pi@raspberrypi:~ $ java -version
         java version "1.8.0"
