@@ -51,9 +51,9 @@ Nexus Setup
         
      to:
      
-        -Xms256M
-        -Xmx256M
-        -XX:MaxDirectMemorySize=256M
+        -Xms320M
+        -Xmx320M
+        -XX:MaxDirectMemorySize=320M
         
   6. Start nexus.
     
