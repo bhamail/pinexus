@@ -60,7 +60,7 @@
     <version-maven-linkcheck-plugin>1.2</version-maven-linkcheck-plugin>
 
     <!-- Update this value and redeploy site when new versions of NXRM are released. -->
-    <version-number-latest-nexus-repo-release-number>3.14.0-04</version-number-latest-nexus-repo-release-number>
+    <version-number-latest-nexus-repo-release-number>3.15.2-01</version-number-latest-nexus-repo-release-number>
   </properties>
 
   <build>
@@ -97,8 +97,7 @@
         <plugin>
           <!-- used to deploy site to gh-pages. -->
           <artifactId>maven-scm-publish-plugin</artifactId>
-          <!-- todo Change to 3.0.0 after republish succeeds. -->
-          <version>1.1</version>
+          <version>3.0.0</version>
           <configuration>
             <!-- This is important for git. -->
             <scmBranch>gh-pages</scmBranch>
