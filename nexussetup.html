@@ -103,7 +103,7 @@ pi@raspberrypi:~ $ mkdir nexus
 
 <div>
 <div>
-<pre class="source">my-pc$ scp ~/Downloads/nexus-3.14.0-04-unix.tar.gz pi@the-Pi-IP-address:/home/pi/nexus/
+<pre class="source">my-pc$ scp ~/Downloads/nexus-3.15.2-01-unix.tar.gz pi@the-Pi-IP-address:/home/pi/nexus/
 </pre></div></div>
 </li>
 <li>
@@ -113,7 +113,7 @@ pi@raspberrypi:~ $ mkdir nexus
 <div>
 <div>
 <pre class="source">pi@raspberrypi:~ $ cd nexus
-pi@raspberrypi:~/nexus $ tar -zxvf nexus-3.14.0-04-unix.tar.gz
+pi@raspberrypi:~/nexus $ tar -zxvf nexus-3.15.2-01-unix.tar.gz
 </pre></div></div>
 </li>
 <li>
@@ -127,14 +127,14 @@ pi@raspberrypi:~/nexus $ tar -zxvf nexus-3.14.0-04-unix.tar.gz
 # There is insufficient memory for the Java Runtime Environment to continue.
 # Native memory allocation (mmap) failed to map 419430400 bytes for committing reserved memory.
 # An error report file with more information is saved as:
-# /home/pi/nexus/nexus-3.14.0-04/hs_err_pid1755.log
+# /home/pi/nexus/nexus-3.15.2-01/hs_err_pid1755.log
 </pre></div></div>
 
 <p>A Pi currently only has 1GB of RAM, so you need to configure Nexus to use less RAM than normal, and allocate more to direct memory for use by the <a class="externalLink" href="https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-">database</a>. Move into the nexus bin dir, and edit the <tt>nexusvm.options</tt> file:</p>
 
 <div>
 <div>
-<pre class="source">pi@raspberrypi:~/nexus/nexus-3.14.0-04/bin vi nexus.vmoptions
+<pre class="source">pi@raspberrypi:~/nexus/nexus-3.15.2-01/bin vi nexus.vmoptions
 </pre></div></div>
 
 <p>Change:</p>
@@ -161,7 +161,7 @@ pi@raspberrypi:~/nexus $ tar -zxvf nexus-3.14.0-04-unix.tar.gz
 
 <div>
 <div>
-<pre class="source">pi@raspberrypi:~/nexus/nexus-3.14.0-04/bin $ ./nexus start
+<pre class="source">pi@raspberrypi:~/nexus/nexus-3.15.2-01/bin $ ./nexus start
 </pre></div></div>
 
 <p>Startup can take a while. The command above will print messages to the console while Nexus is starting. Watch for a message like:</p>
@@ -170,7 +170,7 @@ pi@raspberrypi:~/nexus $ tar -zxvf nexus-3.14.0-04-unix.tar.gz
 <div>
 <pre class="source">-------------------------------------------------
 
-Started Sonatype Nexus OSS 3.14.0-04
+Started Sonatype Nexus OSS 3.15.2-01
 
 -------------------------------------------------
 </pre></div></div>
