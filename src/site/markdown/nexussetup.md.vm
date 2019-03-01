@@ -57,10 +57,12 @@ Nexus Setup
         -Xmx320M
         -XX:MaxDirectMemorySize=320M
         
-  6. Start nexus.
-    
-        pi@raspberrypi:~/nexus/nexus-${version-number-latest-nexus-repo-release-number}/bin $ ./nexus start
-  
+  6. Launch nexus.
+
+    To see the log output on the console, use this command:
+
+        pi@raspberrypi:~/nexus/nexus-${version-number-latest-nexus-repo-release-number}/bin $ ./nexus run
+
     Startup can take a while. The command above will print messages to the console while Nexus is
     starting. Watch for a message like:
     
