@@ -19,7 +19,7 @@ can be done via `ssh`.
       
     ![Pi3](images/supplies/Pi2ModB1GB_-comp-500x283.jpg)
 
-  3. $6.28 - 2.2amp USB Power supply (part# 28-17985)
+  3. $6.28 - 2.5amp USB Power supply
   
      https://www.newark.com/pro-elec/28-19339/adaptor-ac-dc-5-1v-2-5a/dp/51AC7144?st=2.5%20amp%20usb%20power%20supply
   
