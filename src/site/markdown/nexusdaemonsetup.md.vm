@@ -1,6 +1,8 @@
 Nexus Deamon Setup
 ==================
    
+   Before attempting to configure the deamon settings below, be sure you stop any running instances of Nexus.
+
    To enable Nexus to launch automatically at system boot time, make the following changes:
    
    1. Create a new init.d script, named: `nexusd`, in order to install Nexus as a system service: 
