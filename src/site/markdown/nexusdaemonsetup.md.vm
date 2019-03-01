@@ -54,7 +54,11 @@ Nexus Deamon Setup
         pi@raspberrypi:~ $ sudo service nexusd status
         ...
         Running ...
-        
+
+      You can 'tail' the nexus log file to watch startup progress using a command like this:
+
+        pi@raspberrypi:~ $ tail -n 500 -f ~/nexus/sonatype-work/nexus3/log/nexus.log
+
       If for any reason, you want to remove the deamon, run this command:
       
         pi@raspberrypi:~ $ sudo update-rc.d nexusd remove -f

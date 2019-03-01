@@ -64,7 +64,11 @@ Nexus Setup
         pi@raspberrypi:~/nexus/nexus-${version-number-latest-nexus-repo-release-number}/bin $ ./nexus run
 
     Startup can take a while. The command above will print messages to the console while Nexus is
-    starting. Watch for a message like:
+    starting. You could also 'tail' the nexus log file to watch startup progress using a command like this:
+
+        pi@raspberrypi:~/nexus/-$ tail -n 500 -f ~/nexus/sonatype-work/nexus3/log/nexus.log
+
+    Watch for a message like:
     
         -------------------------------------------------
         
