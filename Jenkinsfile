@@ -11,15 +11,14 @@ pipeline {
     stage('Build') {
       steps {
         // Run the maven build
-        sh "mvn clean package site -Plinkcheck -Dstyle.color=never"
+        sh "mvn clean package site -Plinkcheck --batch-mode"
       }
     }
     stage('Results') {
       steps {
         //junit '**/target/surefire-reports/TEST-*.xml'
         //archive 'target/*.jar'
-        archive 'target/site'
-      }
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'index.html', reportName: 'Maven Site', reportTitles: ''])      }
     }
   }
 
