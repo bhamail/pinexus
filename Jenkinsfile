@@ -19,24 +19,25 @@ pipeline {
         junit '**/target/surefire-reports/TEST-*.xml'
         archive 'target/*.jar'
       }
-      post {
-        failure {
-          script {
-            currentBuild.result = 'FAILURE'
-          }
-        }
-        success {
-          script {
-            currentBuild.result = 'SUCCESS'
-          }
-        }
-        always {
-          script {
-            emailext(body: '${DEFAULT_CONTENT}',
-                recipientProviders: [[$class: 'CulpritsRecipientProvider']],
-                subject: '${DEFAULT_SUBJECT}')
-          }
-        }
+    }
+  }
+
+  post {
+    failure {
+      script {
+        currentBuild.result = 'FAILURE'
+      }
+    }
+    success {
+      script {
+        currentBuild.result = 'SUCCESS'
+      }
+    }
+    always {
+      script {
+        emailext(body: '${DEFAULT_CONTENT}',
+            recipientProviders: [[$class: 'CulpritsRecipientProvider']],
+            subject: '${DEFAULT_SUBJECT}')
       }
     }
   }
