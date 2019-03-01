@@ -8,10 +8,6 @@ pipeline {
     pollSCM('H/55 * * * *')
   }
   stages {
-    //  stage('Preparation') { // for display purposes
-    //    // Get some code from a GitHub repository
-    //    git 'https://github.com/bhamail/pinexus.git'
-    //  }
     stage('Build') {
       // Run the maven build
       sh "mvn clean package site -Plinkcheck"
