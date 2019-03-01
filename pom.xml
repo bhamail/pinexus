@@ -283,7 +283,7 @@
             <artifactId>maven-linkcheck-plugin</artifactId>
             <version>${version-maven-linkcheck-plugin}</version>
             <configuration>
-              <timeout>3000</timeout>
+              <timeout>5000</timeout>
             </configuration>
           </plugin>
         </plugins>
