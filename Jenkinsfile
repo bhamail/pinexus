@@ -11,7 +11,7 @@ pipeline {
     stage('Build') {
       steps {
         // Run the maven build
-        sh "mvn clean package site -Plinkcheck --color=disabled"
+        sh "mvn clean package site -Plinkcheck -Dstyle.color=never"
       }
     }
     stage('Results') {
