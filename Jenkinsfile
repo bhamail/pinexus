@@ -34,11 +34,14 @@ pipeline {
       }
     }
     always {
-      script {
-        emailext(body: '${DEFAULT_CONTENT}',
-            recipientProviders: [[$class: 'CulpritsRecipientProvider']],
-            subject: '${DEFAULT_SUBJECT}')
-      }
+      mail to: 'cibuildfarm@gmail.com',
+          subject: "Pipeline: ${currentBuild.fullDisplayName}",
+          body: "Build Result: ${currentBuild.result} - see: ${env.BUILD_URL}"
+//      script {
+//        emailext(body: '${DEFAULT_CONTENT}',
+//            recipientProviders: [[$class: 'CulpritsRecipientProvider']],
+//            subject: '${DEFAULT_SUBJECT}')
+//      }
     }
   }
 }
