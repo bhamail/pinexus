@@ -23,26 +23,31 @@ pipeline {
   }
 
   post {
-    failure {
-      script {
-        currentBuild.result = 'FAILURE'
-      }
-    }
-    unsuccessful {
-      script {
-        currentBuild.result = 'unsuccessful'
-      }
-    }
-    fixed {
-      script {
-        currentBuild.result = 'FIXED'
-      }
-    }
-    success {
-      script {
-        currentBuild.result = 'SUCCESS'
-      }
-    }
+//    failure {
+//      script {
+//        currentBuild.result = 'FAILURE'
+//      }
+//    }
+//    unsuccessful {
+//      script {
+//        currentBuild.result = 'unsuccessful'
+//      }
+//    }
+//    fixed {
+//      script {
+//        currentBuild.result = 'FIXED'
+//      }
+//    }
+//    stable {
+//      script {
+//        currentBuild.result = 'stable'
+//      }
+//    }
+//    success {
+//      script {
+//        currentBuild.result = 'SUCCESS'
+//      }
+//    }
     always {
       mail to: 'cibuildfarm@gmail.com',
           subject: "Pipeline: ${currentBuild.fullDisplayName}",
