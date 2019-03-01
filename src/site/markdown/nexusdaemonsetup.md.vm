@@ -71,9 +71,9 @@ Next step: [Repository Test](repotest.html)
    
  - To compile ARM compatible JSW service binary for ARM:
     
-    see: http://honnix.com/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi/
+    see: https://honnix.github.io/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi
     
-    and: http://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html
+    and: https://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html
 
     Build notes: Worked with wrapper_3.5.25_src.
    
