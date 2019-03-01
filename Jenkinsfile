@@ -8,13 +8,15 @@ pipeline {
     pollSCM('H/55 * * * *')
   }
   stages {
-    stage('Build') {
-      // Run the maven build
-      sh "mvn clean package site -Plinkcheck"
-    }
-    stage('Results') {
-      junit '**/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.jar'
+    steps {
+      stage('Build') {
+        // Run the maven build
+        sh "mvn clean package site -Plinkcheck"
+      }
+      stage('Results') {
+        junit '**/target/surefire-reports/TEST-*.xml'
+        archive 'target/*.jar'
+      }
     }
     post {
       failure {
