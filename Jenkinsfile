@@ -20,34 +20,21 @@ pipeline {
         //archive 'target/*.jar'
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'index.html', reportName: 'Maven Site', reportTitles: ''])      }
     }
+    stage ('success'){
+      steps {
+        script {
+          currentBuild.result = 'SUCCESS'
+        }
+      }
+    }
   }
 
   post {
-//    failure {
-//      script {
-//        currentBuild.result = 'FAILURE'
-//      }
-//    }
-//    unsuccessful {
-//      script {
-//        currentBuild.result = 'unsuccessful'
-//      }
-//    }
-//    fixed {
-//      script {
-//        currentBuild.result = 'FIXED'
-//      }
-//    }
-//    stable {
-//      script {
-//        currentBuild.result = 'stable'
-//      }
-//    }
-//    success {
-//      script {
-//        currentBuild.result = 'SUCCESS'
-//      }
-//    }
+    failure {
+      script {
+        currentBuild.result = 'FAILURE'
+      }
+    }
     always {
       mail to: 'cibuildfarm@gmail.com',
           subject: "Pipeline: ${currentBuild.fullDisplayName}",
