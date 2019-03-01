@@ -11,13 +11,14 @@ pipeline {
     stage('Build') {
       steps {
         // Run the maven build
-        sh "mvn clean package site -Plinkcheck"
+        sh "mvn clean package site -Plinkcheck --color=disabled"
       }
     }
     stage('Results') {
       steps {
-        junit '**/target/surefire-reports/TEST-*.xml'
-        archive 'target/*.jar'
+        //junit '**/target/surefire-reports/TEST-*.xml'
+        //archive 'target/*.jar'
+        archive 'target/site'
       }
     }
   }
