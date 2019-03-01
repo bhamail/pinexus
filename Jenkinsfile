@@ -28,6 +28,16 @@ pipeline {
         currentBuild.result = 'FAILURE'
       }
     }
+    unsuccessful {
+      script {
+        currentBuild.result = 'unsuccessful'
+      }
+    }
+    fixed {
+      script {
+        currentBuild.result = 'FIXED'
+      }
+    }
     success {
       script {
         currentBuild.result = 'SUCCESS'
