@@ -37,7 +37,7 @@ pipeline {
     }
     always {
       mail to: 'cibuildfarm@gmail.com',
-          subject: "Pipeline: ${currentBuild.fullDisplayName}",
+          subject: "Pipeline: ${currentBuild.fullDisplayName} - ${currentBuild.result}",
           body: "Build Result: ${currentBuild.result} - see: ${env.BUILD_URL}"
 //      script {
 //        emailext(body: '${DEFAULT_CONTENT}',
