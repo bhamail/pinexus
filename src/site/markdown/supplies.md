@@ -27,7 +27,7 @@ can be done via `ssh`.
 
   4. $5.99 - 32GB microSD card w/ SD adapter
   
-     http://www.newegg.com/Product/Product.aspx?Item=N82E16820231577&amp;cm_re=gskill_class10_sdcard_32gb-_-20-231-577-_-Product
+     https://www.newegg.com/Product/Product.aspx?Item=N82E16820231577&amp;cm_re=gskill_class10_sdcard_32gb-_-20-231-577-_-Product
 
     ![Pi2](images/supplies/SDCard-20-231-577-Z01.jpg)
 
