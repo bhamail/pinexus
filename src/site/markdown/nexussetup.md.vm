@@ -1,8 +1,12 @@
 Nexus Setup
 ===========
  
- To install Nexus:
-  
+ Thanks to the [nexus-repository-installer](https://github.com/sonatype-nexus-community/nexus-repository-installer)
+  project on the [Sonatype Community](https://github.com/sonatype-nexus-community), the steps to install (and update)
+  Nexus Repository Manager are now greatly simplified.
+
+  The old manual steps are archived here for reference: [Old Nexus Setup](obsolete/nexussetup.html), [Old Nexus Daemon](obsolete/nexusdaemonsetup.html)
+
   1. Use the latest Java 8 release version of Java available from OpenJDK.
 
      Java runtimes above Java 8 [have not been verified](https://help.sonatype.com/repomanager3/system-requirements#SystemRequirements-Java) - do not use them:
@@ -12,38 +16,21 @@ Nexus Setup
         Java(TM) SE Runtime Environment (build 1.8.0-b132)
         Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
 
-  2. Download the Nexus bundle from [Nexus 3 Download](https://help.sonatype.com/repomanager3/download).
+  2. Follow these [Apt Setup](https://github.com/sonatype-nexus-community/nexus-repository-installer#apt-setup) steps
+     to add the installer package repository. You can run the last step to install Nexus Repository Manager, but then
+     you should immediately stop the Nexus daemon to allow you to customize the memory settings for the Pi. For example:
 
-  3. Create a new "nexus" folder at /home/pi/nexus and copy the Nexus bundle into it: 
+        sudo apt-get install nexus-repository-manager
+        sudo service nexus3 stop
 
-        pi@raspberrypi:~ $ pwd
-        /home/pi
-        pi@raspberrypi:~ $ mkdir nexus
-      
-     then: 
-  
-        my-pc$ scp ~/Downloads/nexus-${version-number-latest-nexus-repo-release-number}-unix.tar.gz pi@the-Pi-IP-address:/home/pi/nexus/
-      
-  4. Unzip/untar the Nexus bundle:
-  
-        pi@raspberrypi:~ $ cd nexus
-        pi@raspberrypi:~/nexus $ tar -zxvf nexus-${version-number-latest-nexus-repo-release-number}-unix.tar.gz
+  5. If you run Nexus with the default memory settings, you could run into problems.
 
-  5. If you try to launch Nexus now, you will likely see an error like the one below:
-  
-        Java HotSpot(TM) Server VM warning: INFO: os::commit_memory(0x28e00000, 419430400, 0) failed; error='Cannot allocate memory' (errno=12)
-        #
-        # There is insufficient memory for the Java Runtime Environment to continue.
-        # Native memory allocation (mmap) failed to map 419430400 bytes for committing reserved memory.
-        # An error report file with more information is saved as:
-        # /home/pi/nexus/nexus-${version-number-latest-nexus-repo-release-number}/hs_err_pid1755.log
-        
-     A Pi currently only has 1GB of RAM, so you need to configure Nexus to use less RAM than
-     normal, and allocate more to direct memory for use by the 
+     A Pi currently only has 1GB to 4GB of RAM, so you need to configure Nexus to use less RAM than
+     normal, and allocate less direct memory for use by the
      [database](https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-).
-     Move into the nexus bin dir, and edit the `nexusvm.options` file:
+     Edit the `nexusvm.options` file:
      
-        pi@raspberrypi:~/nexus/nexus-${version-number-latest-nexus-repo-release-number}/bin $ vi nexus.vmoptions
+        sudo vi /opt/sonatype/nexus3/bin/nexus.vmoptions
         
      Change:
      
@@ -53,20 +40,45 @@ Nexus Setup
         
      to:
      
-        -Xms320M
-        -Xmx320M
-        -XX:MaxDirectMemorySize=320M
-        
+        -Xms350M
+        -Xmx350M
+        -XX:MaxDirectMemorySize=350M
+
+     Additional steps for Nexus versions 3.19 and newer:
+
+     Also change:
+
+         -Djava.endorsed.dirs=lib/endorsed
+
+     to:
+
+         -Djava.endorsed.dirs=lib/endorsed:/opt/sonatype/jna
+
+     *NOTE*: Newer versions of Nexus (3.19+) ship with a version of OrientDB which includes a version of
+     [jna](https://github.com/java-native-access/jna) that accidentally omitted the ARM versions of some native libs.
+
+     The solution is to manually download a newer version of jna, via:
+
+         sudo wget http://repo1.maven.org/maven2/net/java/dev/jna/jna/5.5.0/jna-5.5.0.jar
+         sudo wget http://repo1.maven.org/maven2/net/java/dev/jna/jna-platform/5.5.0/jna-platform-5.5.0.jar
+
+     And move these two jars into a new directory:
+
+         /opt/sonatype/jna
+
+     Just in case, chmod +x the .jars:
+
+         sudo chmod +x /opt/sonatype/jna/*
+
   6. Launch nexus.
 
     To see the log output on the console, use this command:
 
-        pi@raspberrypi:~/nexus/nexus-${version-number-latest-nexus-repo-release-number}/bin $ ./nexus run
+        sudo service nexus3 start
 
-    Startup can take a while. The command above will print messages to the console while Nexus is
-    starting. You could also 'tail' the nexus log file to watch startup progress using a command like this:
+    You can 'tail' the nexus log file to watch startup progress using a command like this:
 
-        pi@raspberrypi:~/nexus $ tail -n 500 -f ~/nexus/sonatype-work/nexus3/log/nexus.log
+        tail -n 500  -f /opt/sonatype/sonatype-work/nexus3/log/nexus.log
 
     Watch for a message like:
     
