@@ -94,7 +94,7 @@ Nexus Setup
         http://the-Pi-IP-address:8081
 
     For security reasons, recent versions of Nexus generate a unique admin password during the first startup.
-    To read the generated admin password for your first login to the web UI, you can use the command below against the running docker container:
+    To read the generated admin password for your first login to the web UI, you can use the command below:
 
         cat /opt/sonatype/sonatype-work/nexus3/admin.password && echo
 
