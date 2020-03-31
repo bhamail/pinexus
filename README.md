@@ -1,7 +1,7 @@
 PiNexus
 =======
 
-Tools to play with Nexus on a RaspberryPi.
+Tools to play with Nexus on a [Raspberry Pi](https://www.raspberrypi.org).
 
 Website:
 https://bhamail.github.com/pinexus/

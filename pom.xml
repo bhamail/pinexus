@@ -8,7 +8,7 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>PiNexus</name>
-  <description>Tools to play with Nexus on a RaspberryPi.</description>
+  <description>Tools to play with Nexus on a Raspberry Pi.</description>
   <url>https://bhamail.github.io/pinexus/</url>
   <inceptionYear>2015</inceptionYear>
   <licenses>

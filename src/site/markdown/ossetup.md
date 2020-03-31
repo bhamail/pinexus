@@ -1,18 +1,18 @@
 OS Setup
 ========
   
-  Once you have an SD Card with the Raspian OS Image, you can setup the operating system as follows:
+  Once you have an SD Card with the [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) OS Image, you can setup the operating system as follows:
   
-  1. Insert the card into your RaspberryPI.
+  1. Insert the card into your Raspberry Pi.
   2. Connect the following items:
     *  video (HDMI)	
     *  network
     *  USB keyboard (optional)
-    *  USBmouse (optional)
+    *  USB mouse (optional)
     *  USB power cable
-  3. Note: Current versions of Raspian default to booting into a graphical desktop UI. You 
+  3. Note: Current versions of [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) default to booting into a graphical desktop UI. You 
     should probably change this to boot to the command line (CLI) instead, as this will leave
-    more memory available to Nexus. You may also have to enable `ssh` in newer Raspian images, 
+    more memory available to Nexus. You may also have to enable `ssh` in newer Raspbian images, 
     as it is disabled by default.
    
     You can use  [raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md) to set configuration options such as:

@@ -3,6 +3,7 @@ ${project.name}
   
 ${project.description}
 
+To answer the question: "What is a Raspberry Pi?", see: [Raspberry Pi](https://www.raspberrypi.org)
 
 [![Build Status](https://travis-ci.org/bhamail/pinexus.svg?branch=master)](https://travis-ci.org/bhamail/pinexus)
 
