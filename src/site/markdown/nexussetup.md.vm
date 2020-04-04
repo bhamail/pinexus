@@ -25,7 +25,7 @@ Nexus Setup
 
   5. If you run Nexus with the default memory settings, you could run into problems.
 
-     A Pi currently only has 1GB to 4GB of RAM. If you do not have a 4GB Pi, you should configure Nexus to use less
+     A Pi currently only has 1GB to 4GB of RAM. You should configure Nexus to use less
      RAM than normal, and allocate less direct memory for use by the
      [database](https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-).
      Edit the `nexusvm.options` file:
@@ -34,11 +34,17 @@ Nexus Setup
         
      Change:
      
+        -Xms2703m
+        -Xmx2703m
+        -XX:MaxDirectMemorySize=2703m
+
+     to:
+        
         -Xms1200M
         -Xmx1200M
         -XX:MaxDirectMemorySize=2G
-        
-     to:
+
+     or for a Pi with less than 4GB of RAM, to:
      
         -Xms350M
         -Xmx350M
@@ -59,15 +65,10 @@ Nexus Setup
 
      The solution is to manually download a newer version of jna, via:
 
+         sudo mkdir /opt/sonatype/jna
+         cd /opt/sonatype/jna
          sudo wget https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.5.0/jna-5.5.0.jar
          sudo wget https://repo1.maven.org/maven2/net/java/dev/jna/jna-platform/5.5.0/jna-platform-5.5.0.jar
-
-     And move these two jars into a new directory:
-
-         /opt/sonatype/jna
-
-     Just in case, chmod +x the .jars:
-
          sudo chmod +x /opt/sonatype/jna/*
 
   6. Launch nexus.
