@@ -21,7 +21,7 @@ Nexus Setup
      you should immediately stop the Nexus daemon to allow you to customize the memory settings for the Pi. For example:
 
         sudo apt-get install nexus-repository-manager
-        sudo service nexus3 stop
+        sudo service nexus-repository-manager stop
 
   5. If you run Nexus with the default memory settings, you could run into problems.
 
@@ -75,7 +75,7 @@ Nexus Setup
 
     To see the log output on the console, use this command:
 
-        sudo service nexus3 start
+        sudo service nexus-repository-manager start
 
     You can 'tail' the nexus log file to watch startup progress using a command like this:
 
