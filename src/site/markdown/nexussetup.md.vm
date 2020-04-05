@@ -20,6 +20,8 @@ Nexus Setup
      to add the installer package repository. You can run the last step to install Nexus Repository Manager, but then
      you should immediately stop the Nexus daemon to allow you to customize the memory settings for the Pi. For example:
 
+        wget -qO - https://nx-staging.sonatype.com/repository/community-hosted/pki/deb-gpg/DEB-GPG-KEY-Sonatype.asc | sudo apt-key add -
+        echo "deb [arch=all] https://nx-staging.sonatype.com/repository/community-apt-hosted/ bionic main" | sudo tee /etc/apt/sources.list.d/sonatype-community.list
         sudo apt-get install nexus-repository-manager
         sudo service nexus-repository-manager stop
 
