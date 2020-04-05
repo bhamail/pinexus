@@ -20,10 +20,20 @@ Nexus Setup
      to add the installer package repository. You can run the last step to install Nexus Repository Manager, but then
      you should immediately stop the Nexus daemon to allow you to customize the memory settings for the Pi. For example:
 
-        sudo apt-get install nexus-repository-manager
+        # Setup APT Repository and install
+        wget -qO - https://nx-staging.sonatype.com/repository/community-hosted/pki/deb-gpg/DEB-GPG-KEY-Sonatype.asc | sudo apt-key add -
+        curl https://nx-staging.sonatype.com/repository/community-hosted/sonatype-community.list | sudo tee /etc/apt/sources.list.d/sonatype-community.list
+        sudo apt-get update && sudo apt-get install nexus-repository-manager
+
+        # Setup Yum Repository and install
+        curl https://nx-staging.sonatype.com/repository/community-hosted/sonatype-community.repo | sudo tee /etc/yum.repos.d/sonatype-community.repo
+        sudo yum install nexus-repository-manager
+        
+        # Stop the service before change the configurations
         sudo service nexus-repository-manager stop
 
-  5. If you run Nexus with the default memory settings, you could run into problems.
+
+  3. If you run Nexus with the default memory settings, you could run into problems.
 
      A Pi currently only has 1GB to 4GB of RAM. You should configure Nexus to use less
      RAM than normal, and allocate less direct memory for use by the
@@ -71,7 +81,7 @@ Nexus Setup
          sudo wget https://repo1.maven.org/maven2/net/java/dev/jna/jna-platform/5.5.0/jna-platform-5.5.0.jar
          sudo chmod +x /opt/sonatype/jna/*
 
-  6. Launch nexus.
+  4. Launch nexus.
 
     To see the log output on the console, use this command:
 
