@@ -21,7 +21,7 @@ Nexus Setup
      you should immediately stop the Nexus daemon to allow you to customize the memory settings for the Pi. For example:
 
         # AFTER following the steps from "Apt Setup" above, do the following:
-        # Stop the service before change the configurations
+        # Stop the service before changing configuration
         sudo service nexus-repository-manager stop
 
   3. If you run Nexus with the default memory settings, you could run into problems.
