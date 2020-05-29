@@ -99,7 +99,7 @@ sudo service nexus-repository-manager stop
 <li>
 
 <p>If you run Nexus with the default memory settings, you could run into problems.</p>
-<p>A Pi currently only has 1GB to 4GB of RAM. You should configure Nexus to use less RAM than normal, and allocate less direct memory for use by the <a class="externalLink" href="https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-">database</a>. Edit the <tt>nexusvm.options</tt> file:</p>
+<p>A Pi currently only has 1 GB to 8 GB of RAM. If your Pi has less than 8 GB of RAM, you should configure Nexus to use less RAM than normal, and allocate less direct memory for use by the <a class="externalLink" href="https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-">database</a>. Edit the <tt>nexusvm.options</tt> file:</p>
 
 <div>
 <div>
@@ -124,7 +124,7 @@ sudo service nexus-repository-manager stop
 -XX:MaxDirectMemorySize=2G
 </pre></div></div>
 
-<p>or for a Pi with less than 4GB of RAM, to:</p>
+<p>or for a Pi with less than 4 GB of RAM, use:</p>
 
 <div>
 <div>
