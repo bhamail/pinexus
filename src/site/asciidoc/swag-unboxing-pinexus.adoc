@@ -1,7 +1,7 @@
 == PiNexus Swag - Quick Setup
 
 Your RaspberryPi with Nexus just arrived. Joy! No need to go through all the setup steps
- on the link:https://bhamail.github.com/pinexus/[PiNexus website]. Just make the connections shown below.
+ on the link:https://bhamail.github.io/pinexus/[PiNexus website]. Just make the connections shown below.
 
  . Verify the card is installed in the SDCard slot on the RaspberryPI.
    image:images/setup/pi-sd-3-small.jpg[SDCard slot]
