@@ -16,6 +16,24 @@ Nexus Setup
         Java(TM) SE Runtime Environment (build 1.8.0-b132)
         Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
 
+     Notes from the bleeding edge: The 32bit JVM on Pi OS can't access more than 4gb of memory. In order to try
+     accessing more memory, I installed a 64bit version of Pi OS (danger, unstable, run away). Unfortunately, Nexus
+     Repository Manager still requires jdk8 - which is not available by default from the debian buster repos. Below
+     are the hoops I jumped through to get a recognized java 8 installation.
+
+     * create file:
+       `/etc/apt/sources.list.d/adoptopenjdk.list`
+       with content:
+       `deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main`
+     * run the following:
+     ```shell
+     $ sudo apt update
+     $ wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+     $ sudo apt install adoptopenjdk-8-hotspot
+     ```
+     * run the documented installer steps, and all should be well.
+
+
   2. Follow these [Apt Setup](https://github.com/sonatype-nexus-community/nexus-repository-installer#apt-setup) steps
      to add the installer package repository. You can run the last step to install Nexus Repository Manager, but then
      you should immediately stop the Nexus daemon to allow you to customize the memory settings for the Pi. For example:
