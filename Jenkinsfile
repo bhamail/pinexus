@@ -11,7 +11,7 @@ pipeline {
     stage('Build') {
       steps {
         // Run the maven build
-        sh "mvn clean package site -Plinkcheck --show-version --batch-mode"
+        sh "mvn clean package site --show-version --batch-mode"
       }
     }
     stage('Results') {

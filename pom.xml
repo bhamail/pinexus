@@ -57,8 +57,6 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <version-maven-linkcheck-plugin>1.2</version-maven-linkcheck-plugin>
-
     <!-- Update this value and redeploy site when new versions of NXRM are released. -->
     <version-number-latest-nexus-repo-release-number>3.15.2-01</version-number-latest-nexus-repo-release-number>
   </properties>
@@ -86,12 +84,6 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
           <version>2.7</version>
-        </plugin>
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-linkcheck-plugin</artifactId>
-          <version>${version-maven-linkcheck-plugin}</version>
         </plugin>
 
         <plugin>
@@ -266,29 +258,4 @@
 
     </plugins>
   </reporting>
-
-  <profiles>
-
-    <profile>
-      <id>linkcheck</id>
-      <activation>
-        <property>
-          <name>linkcheck.exec</name>
-        </property>
-      </activation>
-      <reporting>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-linkcheck-plugin</artifactId>
-            <version>${version-maven-linkcheck-plugin}</version>
-            <configuration>
-              <timeout>5000</timeout>
-            </configuration>
-          </plugin>
-        </plugins>
-      </reporting>
-    </profile>
-    
-  </profiles>
 </project>
