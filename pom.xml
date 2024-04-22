@@ -107,8 +107,7 @@
 
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
-          <!-- maven-site-plugin is still borked, unless new doxia dependency is explicitly defined. -->
-          <version>3.7.1</version>
+          <version>4.0.0-M13</version>
           <configuration>
             <!-- we use maven-scm-publish-plugin to deploy, so skip this. -->
             <skipDeploy>true</skipDeploy>
