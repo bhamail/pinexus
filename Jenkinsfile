@@ -2,7 +2,6 @@ pipeline {
   agent { label 'pi3' }
   tools {
     maven 'Maven-3.6.0'
-    jdk 'JDK-11'
   }
   triggers {
     snapshotDependencies()
