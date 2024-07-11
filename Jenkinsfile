@@ -2,6 +2,7 @@ pipeline {
   agent { label 'pi3' }
   tools {
     maven 'Maven-3.6.0'
+    jdk 'JDK-11'
   }
   triggers {
     snapshotDependencies()
@@ -11,7 +12,9 @@ pipeline {
     stage('Build') {
       steps {
         // Run the maven build
-        sh "mvn clean package site --show-version --batch-mode"
+        withMaven(mavenOpts: '--add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util.regex=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED') {
+          sh "mvn clean package --show-version --batch-mode"
+        }
       }
     }
     stage('Results') {
