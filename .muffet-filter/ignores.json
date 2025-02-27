@@ -1,0 +1,46 @@
+[
+  {
+    "url": "https://www.raspberrypi.com/software/",
+    "error": "403"
+  },
+  {
+    "url": "https://www.raspberrypi.com/products/*",
+    "error": "403"
+  },
+  {
+    "url": "https://www.raspberrypi.com/documentation/computers/getting-started.html",
+    "error": "403"
+  },
+  {
+    "url": "https://bhamail.github.io/js/*",
+    "error": "404"
+  },
+  {
+    "url": "https://www.apache.org/licenses/#apply",
+    "error": "id #apply not found"
+  },
+  {
+    "url": "https://www.apache.org/licenses/#apache-license-version-20",
+    "error": "id #apache-license-version-20 not found"
+  },
+  {
+    "url": "https://infra-reports.apache.org/#uptime",
+    "error": "id #uptime not found"
+  },
+  {
+    "url": "https://www.linkedin.com/company/the-apache-software-foundation/",
+    "error": "999"
+  },
+  {
+    "url": "https://twitter.com/TheASF",
+    "error": "error when reading response headers: small read buffer. Increase ReadBufferSize. Buffer size=8192, contents: .*"
+  },
+  {
+    "url": "https://vilros.com/products/raspberry-pi-5-official-power-supply",
+    "error": "403"
+  },
+  {
+    "url": "https://www.newark.com/raspberry-pi/sc0218/5-1v-3a-usb-c-psu-us-black-rohs/dp/03AH7034",
+    "error": "timeout"
+  }
+]

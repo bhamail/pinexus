@@ -11,5 +11,5 @@ https://bhamail.github.io/pinexus/
 TODO: 
 ----
 * Fix CI build badge and link to real CI build.
-* Add deploy notes. For now, do: `mvn clean site-deploy`
+* Add deploy notes. For now, do: `./mvnw clean site-deploy`
   `

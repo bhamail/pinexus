@@ -1,0 +1,53 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# muffet-filter wrapper
+# ----------------------------------------------------------------------------
+PROJECT_ORG="bhamail"
+PROJECT_NAME="muffet-filter"
+PROJECT_URL="https://github.com/$PROJECT_ORG/$PROJECT_NAME/muffet-filter"
+#echo "project url: $PROJECT_URL"
+
+WRAPPER_FILENAME="mfw"
+#echo "wrapper filename: $WRAPPER_FILENAME"
+
+WRAPPER_DIR="./.muffet-filter"
+WRAPPER="$WRAPPER_DIR/$WRAPPER_FILENAME"
+#echo "wrapper: $WRAPPER"
+
+if test -f "$WRAPPER"; then
+  echo "using wrapper: $WRAPPER"
+else
+  echo "::error::Missing muffet-filter wrapper file $WRAPPER. Download here: $PROJECT_URL" && exit 1
+fi
+
+MUFFET_FILTER_BINARY="$WRAPPER_DIR/muffet-filter"
+if test -f "$MUFFET_FILTER_BINARY"; then
+  echo "using binary: $MUFFET_FILTER_BINARY"
+else
+  echo "::error::Missing muffet-filter binary file $MUFFET_FILTER_BINARY   Downloading..."
+
+  OS_NAME=$(uname | awk '{print tolower($0)}')
+  echo "os name: $OS_NAME"
+
+  ARCH=$(uname -m)
+  echo "os arch uname: $ARCH"
+  ARCH_NAME=""
+  case $(uname -m) in
+      i386)   ARCH_NAME="386" ;;
+      i686)   ARCH_NAME="386" ;;
+      x86_64) ARCH_NAME="amd64" ;;
+      arm)    dpkg --print-ARCH_NAME | grep -q "arm64" && ARCH_NAME="arm64" || ARCH_NAME="arm" ;;
+  esac
+  echo "os arch: $ARCH_NAME"
+
+  # todo build URL for arch/winz
+  MUFFET_FILTER_GH_API="https://api.github.com/repos/$PROJECT_ORG/$PROJECT_NAME/releases/latest"
+  BUNDLE_NAME="muffet-filter_${OS_NAME}_${ARCH_NAME}.tar.gz"
+  echo "bundle name: $BUNDLE_NAME"
+  MUFFET_FILTER_URL=$(wget -qO- $MUFFET_FILTER_GH_API | grep "browser_download_url.*muffet-filter_${OS_NAME}_${ARCH_NAME}.tar.gz" | cut -d \" -f 4)
+  echo "download url: $MUFFET_FILTER_URL"
+  wget -qO- "${MUFFET_FILTER_URL}" | tar xzf - -C $WRAPPER_DIR muffet-filter
+  echo "extracted to: $WRAPPER_DIR/muffet-filter"
+fi
+
+$MUFFET_FILTER_BINARY "$@"
