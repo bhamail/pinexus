@@ -6,7 +6,7 @@ Tools to play with Nexus on a [Raspberry Pi](https://www.raspberrypi.org).
 Website:
 https://bhamail.github.io/pinexus/
 
-[![Build Status](https://travis-ci.org/bhamail/pinexus.svg?branch=master)](https://travis-ci.org/bhamail/pinexus)
+[![Build Status](https://github.com/bhamail/pinexus/actions/workflows/build.yaml/badge.svg)](https://github.com/bhamail/pinexus/actions)
 
 TODO: 
 ----

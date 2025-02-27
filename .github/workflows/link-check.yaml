@@ -26,4 +26,4 @@ jobs:
           fi
       - name: Run muffet filter wrapper
         #see ./.muffet-filter/ignores.json for the list of ignored links
-        run: ./.muffet-filter/mfw https://bhamail.github.io/picapsule/
+        run: ./.muffet-filter/mfw https://bhamail.github.io/pinexus/
