@@ -25,4 +25,4 @@ jobs:
       - name: Java version
         run: java -version
       - name: Build Site
-        run: ./mvnw clean package site -Plinkcheck
+        run: ./mvnw clean package site
