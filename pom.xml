@@ -133,7 +133,7 @@
             <dependency>
               <groupId>org.asciidoctor</groupId>
               <artifactId>asciidoctor-maven-plugin</artifactId>
-              <version>1.5.3</version>
+              <version>3.1.1</version>
             </dependency>
             <!-- required to make site plugin happy. -->
             <dependency>
