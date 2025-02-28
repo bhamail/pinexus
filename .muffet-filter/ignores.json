@@ -42,5 +42,45 @@
   {
     "url": "https://www.newark.com/raspberry-pi/sc0218/5-1v-3a-usb-c-psu-us-black-rohs/dp/03AH7034",
     "error": "timeout"
+  },
+  {
+    "url": "empty",
+    "error": "missing port in address"
+  },
+  {
+    "url": "https://github.com/sonatype-nexus-community/nexus-repository-installer#apt-setup",
+    "error": "id #apt-setup not found"
+  },
+  {
+    "url": "https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-",
+    "error": "403"
+  },
+  {
+    "url": "https://help.sonatype.com/repomanager3/system-requirements#SystemRequirements-Java",
+    "error": "id #SystemRequirements-Java not found"
+  },
+  {
+    "url": "https://www.newegg.com/Product/Product.aspx?Item=N82E16820231577",
+    "error": "403"
+  },
+  {
+    "url": "https://www.raspberrypi.org/downloads/raspbian/",
+    "error": "403"
+  },
+  {
+    "url": "https://www.raspberrypi.org/documentation/configuration/raspi-config.md",
+    "error": "403"
+  },
+  {
+    "url": "https://www.newark.com/*",
+    "error": "timeout"
+  },
+  {
+    "url": "https://www.raspberrypi.org/documentation/installation/installing-images/",
+    "error": "403"
+  },
+  {
+    "url": "https://honnix.github.io/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi",
+    "error": "404"
   }
 ]
