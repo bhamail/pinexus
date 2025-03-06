@@ -82,5 +82,9 @@
   {
     "url": "https://honnix.github.io/technology/raspberry%20pi/java/2013/07/14/sonatype-nexus-on-raspberry-pi",
     "error": "404"
+  },
+  {
+    "url": "https://github.com/bhamail/pinexus/actions/workflows/build.yaml/badge.svg",
+    "error": "error when dialing*"
   }
 ]
