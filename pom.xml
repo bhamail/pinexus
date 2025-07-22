@@ -84,7 +84,7 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
           <!-- Latest version of versions-maven-plugin can cause deploy issues. -->
-          <version>2.7</version>
+          <version>2.18.0</version>
         </plugin>
 
         <plugin>
