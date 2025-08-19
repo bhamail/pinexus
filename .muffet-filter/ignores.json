@@ -76,6 +76,10 @@
     "error": "timeout"
   },
   {
+    "url": "https://www.newark.com/raspberry-pi/*",
+    "error": "403"
+  },
+  {
     "url": "https://www.raspberrypi.org/documentation/installation/installing-images/",
     "error": "403"
   },
