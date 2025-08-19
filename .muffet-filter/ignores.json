@@ -78,6 +78,9 @@
   {
     "url": "https://www.newark.com/raspberry-pi/*",
     "error": "403"
+  },{
+    "url": "https://www.newark.com/pro-elec/*",
+    "error": "403"
   },
   {
     "url": "https://www.raspberrypi.org/documentation/installation/installing-images/",
