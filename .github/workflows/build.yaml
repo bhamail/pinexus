@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: Setup Local Java for nektos/act
         if: ${{ env.ACT }}
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '21'
