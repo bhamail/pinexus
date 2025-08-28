@@ -94,5 +94,9 @@
   {
     "url": "https://github.com/bhamail/pinexus/actions/workflows/build.yaml/badge.svg",
     "error": "error when dialing*"
+  },
+  {
+    "url": "https://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html",
+    "error": "429"
   }
 ]
