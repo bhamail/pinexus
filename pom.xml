@@ -91,7 +91,7 @@
           <!-- used to deploy site to gh-pages. -->
           <artifactId>maven-scm-publish-plugin</artifactId>
           <!-- Latest version of maven-scm-publish-plugin had "issues" in this project. -->
-          <version>3.0.0</version>
+          <version>3.3.0</version>
           <configuration>
             <!-- This is important for git. -->
             <scmBranch>gh-pages</scmBranch>
