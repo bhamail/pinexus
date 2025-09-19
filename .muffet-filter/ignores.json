@@ -28,6 +28,10 @@
     "error": "id #uptime not found"
   },
   {
+    "url": "https://infra-reports.apache.org/#uptime",
+    "error": "timeout"
+  },
+  {
     "url": "https://www.linkedin.com/company/the-apache-software-foundation/",
     "error": "999"
   },
