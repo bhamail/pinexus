@@ -102,5 +102,9 @@
   {
     "url": "https://ti57.blogspot.se/2013/05/apache-archiva-on-raspberry-pi.html",
     "error": "429"
+  },
+  {
+    "url": "https://cwiki.apache.org/",
+    "error": "error when dialing .*"
   }
 ]
