@@ -32,6 +32,10 @@
     "error": "timeout"
   },
   {
+    "url": "https://issues.apache.org/",
+    "error": "timeout"
+  },
+  {
     "url": "https://www.linkedin.com/company/the-apache-software-foundation/",
     "error": "999"
   },
