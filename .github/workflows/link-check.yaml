@@ -13,7 +13,7 @@ jobs:
   link-check:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Verify muffet filter wrapper is found
         run: |
           WRAPPER_FILENAME="mfw"
