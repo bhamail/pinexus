@@ -72,6 +72,10 @@
     "error": "403"
   },
   {
+    "url": "https://www.newegg.com/Product/Product.aspx?Item=N82E16820231577",
+    "error": "too many redirections"
+  },
+  {
     "url": "https://www.raspberrypi.org/downloads/raspbian/",
     "error": "403"
   },
