@@ -24,12 +24,12 @@ Nexus Setup
       
      then: 
   
-        my-pc$ scp ~/Downloads/nexus-${version-number-latest-nexus-repo-release-number}-unix.tar.gz pi@the-Pi-IP-address:/home/pi/nexus/
+        my-pc$ scp ~/Downloads/nexus-${version_number_latest_nexus_repo_release_number}-unix.tar.gz pi@the-Pi-IP-address:/home/pi/nexus/
       
   4. Unzip/untar the Nexus bundle:
   
         pi@raspberrypi:~ $ cd nexus
-        pi@raspberrypi:~/nexus $ tar -zxvf nexus-${version-number-latest-nexus-repo-release-number}-unix.tar.gz
+        pi@raspberrypi:~/nexus $ tar -zxvf nexus-${version_number_latest_nexus_repo_release_number}-unix.tar.gz
 
   5. If you try to launch Nexus now, you will likely see an error like the one below:
   
@@ -38,14 +38,14 @@ Nexus Setup
         # There is insufficient memory for the Java Runtime Environment to continue.
         # Native memory allocation (mmap) failed to map 419430400 bytes for committing reserved memory.
         # An error report file with more information is saved as:
-        # /home/pi/nexus/nexus-${version-number-latest-nexus-repo-release-number}/hs_err_pid1755.log
+        # /home/pi/nexus/nexus-${version_number_latest_nexus_repo_release_number}/hs_err_pid1755.log
         
      A Pi currently only has 1GB of RAM, so you need to configure Nexus to use less RAM than
      normal, and allocate more to direct memory for use by the 
      [database](https://support.sonatype.com/hc/en-us/articles/115007093447-Optimizing-OrientDB-Database-Memory-).
      Move into the nexus bin dir, and edit the `nexusvm.options` file:
      
-        pi@raspberrypi:~/nexus/nexus-${version-number-latest-nexus-repo-release-number}/bin $ vi nexus.vmoptions
+        pi@raspberrypi:~/nexus/nexus-${version_number_latest_nexus_repo_release_number}/bin $ vi nexus.vmoptions
         
      Change:
      
@@ -63,7 +63,7 @@ Nexus Setup
 
     To see the log output on the console, use this command:
 
-        pi@raspberrypi:~/nexus/nexus-${version-number-latest-nexus-repo-release-number}/bin $ ./nexus run
+        pi@raspberrypi:~/nexus/nexus-${version_number_latest_nexus_repo_release_number}/bin $ ./nexus run
 
     Startup can take a while. The command above will print messages to the console while Nexus is
     starting. You could also 'tail' the nexus log file to watch startup progress using a command like this:
@@ -74,7 +74,7 @@ Nexus Setup
     
         -------------------------------------------------
         
-        Started Sonatype Nexus OSS ${version-number-latest-nexus-repo-release-number}
+        Started Sonatype Nexus OSS ${version_number_latest_nexus_repo_release_number}
         
         -------------------------------------------------
 

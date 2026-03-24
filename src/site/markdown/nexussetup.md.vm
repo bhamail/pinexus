@@ -104,7 +104,7 @@ Nexus Setup
     
         -------------------------------------------------
         
-        Started Sonatype Nexus OSS ${version-number-latest-nexus-repo-release-number}
+        Started Sonatype Nexus OSS ${version_number_latest_nexus_repo_release_number}
         
         -------------------------------------------------
 
