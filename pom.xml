@@ -58,7 +58,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- Update this value and redeploy site when new versions of NXRM are released. -->
-    <version-number-latest-nexus-repo-release-number>3.15.2-01</version-number-latest-nexus-repo-release-number>
+    <version_number_latest_nexus_repo_release_number>3.15.2-01</version_number_latest_nexus_repo_release_number>
   </properties>
 
   <build>
@@ -111,7 +111,7 @@
           <artifactId>maven-site-plugin</artifactId>
           <!-- maven-site-plugin is still borked, unless new doxia dependency is explicitly defined. -->
           <!-- latest version of maven-site-plugin causes deploy issues. -->
-          <version>3.7.1</version>
+          <version>3.21.0</version>
           <configuration>
             <!-- we use maven-scm-publish-plugin to deploy, so skip this. -->
             <skipDeploy>true</skipDeploy>
