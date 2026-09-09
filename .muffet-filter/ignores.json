@@ -44,6 +44,10 @@
     "error": "error when reading response headers: small read buffer. Increase ReadBufferSize. Buffer size=8192, contents: .*"
   },
   {
+    "url": "https://twitter.com/TheASF",
+    "error": "403"
+  },
+  {
     "url": "https://vilros.com/products/raspberry-pi-5-official-power-supply",
     "error": "403"
   },
