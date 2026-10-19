@@ -48,6 +48,14 @@
     "error": "403"
   },
   {
+    "url": "https://twitter.com/TheASF",
+    "error": ".*"
+  },
+  {
+    "url": "https://www.youtube.com/c/TheApacheFoundation",
+    "error": ".*"
+  },
+  {
     "url": "https://vilros.com/products/raspberry-pi-5-official-power-supply",
     "error": "403"
   },
