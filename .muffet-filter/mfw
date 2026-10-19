@@ -46,9 +46,9 @@ else
   MUFFET_FILTER_GH_API="https://api.github.com/repos/$PROJECT_ORG/$PROJECT_NAME/releases/latest"
   BUNDLE_NAME="muffet-filter_${OS_NAME}_${ARCH_NAME}.tar.gz"
   echo "bundle name: $BUNDLE_NAME"
-  MUFFET_FILTER_URL=$(wget -qO- $MUFFET_FILTER_GH_API | grep "browser_download_url.*muffet-filter_${OS_NAME}_${ARCH_NAME}.tar.gz" | cut -d \" -f 4)
+  MUFFET_FILTER_URL=$(wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 --tries=5 -qO- $MUFFET_FILTER_GH_API | grep "browser_download_url.*muffet-filter_${OS_NAME}_${ARCH_NAME}.tar.gz" | cut -d \" -f 4)
   echo "download url: $MUFFET_FILTER_URL"
-  wget -qO- "${MUFFET_FILTER_URL}" | tar xzf - -C $WRAPPER_DIR muffet-filter
+  wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 --tries=5 -qO- "${MUFFET_FILTER_URL}" | tar xzf - -C $WRAPPER_DIR muffet-filter
   echo "extracted to: $WRAPPER_DIR/muffet-filter"
 fi
 
