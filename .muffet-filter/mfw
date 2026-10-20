@@ -24,7 +24,7 @@ MUFFET_FILTER_BINARY="$WRAPPER_DIR/muffet-filter"
 if test -f "$MUFFET_FILTER_BINARY"; then
   echo "using binary: $MUFFET_FILTER_BINARY"
 else
-  echo "::error::Missing muffet-filter binary file $MUFFET_FILTER_BINARY   Downloading..."
+  echo "missing muffet-filter binary file $MUFFET_FILTER_BINARY   Downloading..."
 
   OS_NAME=$(uname | awk '{print tolower($0)}')
   echo "os name: $OS_NAME"
