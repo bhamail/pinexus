@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'pi3' }
+  //agent { label 'pi3' }
   tools {
     maven 'Maven-3.10.0'
   }
