@@ -1,5 +1,6 @@
 pipeline {
   //agent { label 'pi3' }
+  agent { }
   tools {
     maven 'Maven-3.10.0'
   }
