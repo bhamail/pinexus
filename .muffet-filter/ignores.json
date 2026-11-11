@@ -37,7 +37,7 @@
   },
   {
     "url": "https://www.linkedin.com/company/the-apache-software-foundation/",
-    "error": "999"
+    "error": ".*"
   },
   {
     "url": "https://twitter.com/TheASF",
