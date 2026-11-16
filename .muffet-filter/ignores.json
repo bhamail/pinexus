@@ -24,6 +24,10 @@
     "error": "id #apache-license-version-20 not found"
   },
   {
+    "url": "https://opensource.org/licenses/Apache-2.0",
+    "error": "403"
+  },
+  {
     "url": "https://infra-reports.apache.org/#uptime",
     "error": "id #uptime not found"
   },
