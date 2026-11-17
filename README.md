@@ -12,4 +12,4 @@ TODO:
 ----
 * Fix CI build badge and link to real CI build.
 * Add deploy notes. For now, do: `./mvnw clean site-deploy`
-* Remove arg: `-XX:+IgnoreUnrecognizedVMOptions` from `MAVEN_OPTS` after upgrading agents to run on JDK24+
+* support JDK24+, until then, keep agents building with maven 3.9.x.
