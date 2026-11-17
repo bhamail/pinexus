@@ -12,4 +12,4 @@ TODO:
 ----
 * Fix CI build badge and link to real CI build.
 * Add deploy notes. For now, do: `./mvnw clean site-deploy`
-* Remove arg: `-XX:+IgnoreUnrecognizedOptions` from `MAVEN_OPTS` after upgrading agents to run on JDK24+
+* Remove arg: `-XX:+IgnoreUnrecognizedVMOptions` from `MAVEN_OPTS` after upgrading agents to run on JDK24+
